@@ -1,0 +1,67 @@
+Prateek Budhwar
+gmail.com +91-9350569323 in/prateek-budhwar-212a92314?originalSubdomain=in github.com/budprat
+SUMM
+ARY
+Results-oriented Data Engineer with 5+ years of experience in building scalable Earth Observation data processing pipelines, systems, cloud-native
+applications and API development. Proven ability to architect distributed computing frameworks and implement scalable solutions for large-volume
+geospatial data processing, with a proven track record of optimizing processing workflows for large-scale satellite datasets.
+Eager to leverage
+extensive data engineering expertise and a strong learning aptitude to transition into an AI-focused role, contributing to innovative machine
+learning applications.Transitioning skills in data engineering and cloud infrastructure toward AI/ML engineering roles.
+EXPERIENCE
+Developer
+German Aerospace Center (DLR) March 2021 - December 2023 ,
+•
+Engineered openEO Python API for satellite data processing, reducing processing time by 40% across 15TB+ of Sentinel-2 data.
+•
+Architected distributed computing infrastructure for the Terrabyte HPD
+A platform, enabling parallel processing of 1000+ satellite scenes.
+•
+CI/CD workflows with Docker and Kubernetes, decreasing deployment time by 50% and improving service reliability by 30%.
+Munich, Germany
+Researcher
+Institute for Earth Observation, EURAC Research •
+Developed Sentinel-2/UAV datacube ingestion workflows, improving data access time by 35% using OpenDataCube.
+•
+Created and maintained openEO WCPS driver API, enabling standardized access to 5+ satellite data providers across Europe.
+•
+Optimized containerized deployment of geospatial data processing services, reducing infrastructure costs by 25%.
+,
+March 2018 - March 2021Bozen, Italy
+PROJECT
+Terrabyte HPD
+A Platform (German Government Project)
+German Aerospace Center (DLR)•www.dlr.de/en/dw/research-transfer/hpda/high-performance-data-analysis •March 2021 - December 2023
+•
+Technologies: Python, Dask, Kubernetes, ODC, xarray, GD
+AL.
+•
+Engineered high-performance distributed computing framework processing 10TB+ of satellite data daily.
+•
+Reduced computation time by 35% through optimization of Dask-based processing clusters and resource allocation.
+openEO (EU Horizon 2020)
+Institute for Earth Observation, EURAC Research•github.com/Open-EO/openeo-spring-driver • •
+Technologies: Python, REST API, Docker, Kubernetes, STAC, Dask.
+•
+Led backend API development for standardized satellite data processing, adopted by 8 major European data providers.
+•
+Designed and implemented STAC-compliant metadata API, resulting in 60% faster data discovery for EO applications.
+March 2018 - March 2021
+E
+DUCATION
+Master of Science in Geoinformatics
+University of Muenster•Muenster, Germany•2016
+Master of Technology in Geomatics Engineering
+Indian Institute of Technology, Roorkee•Roorkee, India•2012
+Bachelor of Engineering in Electronics and Communication
+Panjab University•Chandigarh, India •2009
+CERTIFICATIONS
+Gen AI Cohort
+Bangalore•2025
+SKILLS
+Programming: Python, Shell Scripting, GD
+AL, rasterio, xarray
+AI Tools/Skills : Finetuning AI models like Deepseek, Instruction finetuning, n8n, ComfyUI, LORAs, LLMs, Langflow
+Cloud/
+DevOps: Docker, Kubernetes, CI/CD pipelines, Git
+Data Engineering: RESTful APIs, openEO, Datacubes, STAC, Dask, OpenDataCub
