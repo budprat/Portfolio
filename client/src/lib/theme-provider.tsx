@@ -20,22 +20,38 @@ export const ThemeProviderContext = createContext<ThemeProviderState>(initialSta
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem("theme") as Theme) || "system"
+    () => (localStorage?.getItem("theme") as Theme) || "system"
   );
 
   useEffect(() => {
     const root = window.document.documentElement;
+    
+    // Function to handle system preference changes
+    const handleSystemPreferenceChange = (e: MediaQueryListEvent) => {
+      if (theme === "system") {
+        root.classList.remove("light", "dark");
+        root.classList.add(e.matches ? "dark" : "light");
+      }
+    };
+
+    // Handle system theme preference
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+    prefersDarkMode.addEventListener("change", handleSystemPreferenceChange);
+
+    // Apply theme
     root.classList.remove("light", "dark");
 
     if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+      const systemTheme = prefersDarkMode.matches ? "dark" : "light";
       root.classList.add(systemTheme);
-      return;
+    } else {
+      root.classList.add(theme);
     }
 
-    root.classList.add(theme);
+    // Cleanup
+    return () => {
+      prefersDarkMode.removeEventListener("change", handleSystemPreferenceChange);
+    };
   }, [theme]);
 
   const value = {

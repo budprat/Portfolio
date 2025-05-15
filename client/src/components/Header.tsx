@@ -28,6 +28,9 @@ export default function Header() {
       });
     };
 
+    // Initial check
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -41,6 +44,11 @@ export default function Header() {
         behavior: 'smooth'
       });
     }
+  };
+
+  // Theme toggle function
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   // Nav items array
@@ -88,7 +96,7 @@ export default function Header() {
           <Button 
             variant="ghost" 
             size="icon" 
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            onClick={toggleTheme}
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -114,6 +122,27 @@ export default function Header() {
                     {item.label}
                   </a>
                 ))}
+                
+                {/* Theme toggle in mobile menu */}
+                <div className="flex items-center gap-2">
+                  <Button 
+                    variant="outline" 
+                    onClick={toggleTheme}
+                    className="flex items-center gap-2"
+                  >
+                    {theme === 'dark' ? (
+                      <>
+                        <Sun className="h-4 w-4" />
+                        <span>Light Mode</span>
+                      </>
+                    ) : (
+                      <>
+                        <Moon className="h-4 w-4" />
+                        <span>Dark Mode</span>
+                      </>
+                    )}
+                  </Button>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
