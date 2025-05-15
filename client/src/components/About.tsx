@@ -1,0 +1,145 @@
+import { motion } from "framer-motion";
+import { Check, ArrowRight } from "lucide-react";
+
+export default function About() {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.2,
+        delayChildren: 0.2,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  return (
+    <section id="about" className="bg-white dark:bg-gray-800 py-16 md:py-24">
+      <div className="container mx-auto px-4">
+        <motion.div 
+          className="text-center mb-16 reveal"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">About Me</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Get to know the developer behind the code.
+          </p>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div 
+            className="reveal"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <img 
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+              alt="Earth observation satellite imagery" 
+              className="rounded-2xl shadow-xl w-full h-auto" 
+            />
+          </motion.div>
+          
+          <motion.div 
+            className="reveal"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.h3 
+              className="text-2xl md:text-3xl font-bold font-heading mb-6"
+              variants={itemVariants}
+            >
+              Who I Am
+            </motion.h3>
+            
+            <motion.p 
+              className="text-lg mb-6 text-gray-600 dark:text-gray-300"
+              variants={itemVariants}
+            >
+              I'm a results-oriented Data Engineer with 5+ years of experience in building scalable Earth Observation data processing pipelines, systems, and cloud-native applications.
+            </motion.p>
+            
+            <motion.p 
+              className="text-lg mb-6 text-gray-600 dark:text-gray-300"
+              variants={itemVariants}
+            >
+              With a proven track record of architecting distributed computing frameworks and implementing scalable solutions for large-volume geospatial data processing, I've consistently optimized workflows for large-scale satellite datasets.
+            </motion.p>
+            
+            <motion.p 
+              className="text-lg mb-8 text-gray-600 dark:text-gray-300"
+              variants={itemVariants}
+            >
+              I'm now transitioning my extensive data engineering expertise toward AI-focused roles, eager to contribute to innovative machine learning applications.
+            </motion.p>
+            
+            <motion.div 
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+              variants={itemVariants}
+            >
+              <div>
+                <h4 className="font-bold mb-3 text-primary dark:text-primary-foreground">Expertise</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <Check className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
+                    <span>Data Pipeline Architecture</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
+                    <span>Cloud Infrastructure</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
+                    <span>Geospatial Analytics</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
+                    <span>API Development</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-bold mb-3 text-primary dark:text-primary-foreground">Transitioning To</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center">
+                    <ArrowRight className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
+                    <span>AI Engineering</span>
+                  </li>
+                  <li className="flex items-center">
+                    <ArrowRight className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
+                    <span>Model Finetuning</span>
+                  </li>
+                  <li className="flex items-center">
+                    <ArrowRight className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
+                    <span>LLM Development</span>
+                  </li>
+                  <li className="flex items-center">
+                    <ArrowRight className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
+                    <span>AI Systems</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
