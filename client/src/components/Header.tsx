@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import { useTheme } from "@/lib/theme-provider";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Header() {
-  const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
@@ -46,11 +44,6 @@ export default function Header() {
     }
   };
 
-  // Theme toggle function
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
-
   // Nav items array
   const navItems = [
     { id: "home", label: "Home" },
@@ -64,13 +57,13 @@ export default function Header() {
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'backdrop-blur-sm bg-white/80 dark:bg-gray-900/80 shadow-sm' : 'bg-transparent'
+      isScrolled ? 'backdrop-blur-sm bg-gray-900/80 shadow-sm' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <a 
           onClick={() => scrollToSection('home')}
-          className="text-2xl font-bold font-heading text-primary dark:text-primary-foreground flex items-center gap-2 cursor-pointer"
+          className="text-2xl font-bold font-heading text-primary-foreground flex items-center gap-2 cursor-pointer"
         >
           <span className="i-lucide-code" />
           <span>Prateek</span>
@@ -82,8 +75,8 @@ export default function Header() {
             <a
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`cursor-pointer hover:text-primary dark:hover:text-primary-foreground transition-colors duration-200 ${
-                activeSection === item.id ? 'text-primary dark:text-primary-foreground' : ''
+              className={`cursor-pointer hover:text-primary-foreground transition-colors duration-200 ${
+                activeSection === item.id ? 'text-primary-foreground' : 'text-gray-400'
               }`}
             >
               {item.label}
@@ -92,16 +85,6 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          {/* Theme Toggle */}
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
-
           {/* Mobile Menu */}
           <Sheet>
             <SheetTrigger asChild className="md:hidden">
@@ -109,40 +92,19 @@ export default function Header() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" className="bg-gray-900 border-gray-800">
               <div className="flex flex-col gap-6 mt-10">
                 {navItems.map((item) => (
                   <a
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`text-lg font-medium cursor-pointer hover:text-primary dark:hover:text-primary-foreground transition-colors duration-200 ${
-                      activeSection === item.id ? 'text-primary dark:text-primary-foreground' : ''
+                    className={`text-lg font-medium cursor-pointer hover:text-primary-foreground transition-colors duration-200 ${
+                      activeSection === item.id ? 'text-primary-foreground' : 'text-gray-400'
                     }`}
                   >
                     {item.label}
                   </a>
                 ))}
-                
-                {/* Theme toggle in mobile menu */}
-                <div className="flex items-center gap-2">
-                  <Button 
-                    variant="outline" 
-                    onClick={toggleTheme}
-                    className="flex items-center gap-2"
-                  >
-                    {theme === 'dark' ? (
-                      <>
-                        <Sun className="h-4 w-4" />
-                        <span>Light Mode</span>
-                      </>
-                    ) : (
-                      <>
-                        <Moon className="h-4 w-4" />
-                        <span>Dark Mode</span>
-                      </>
-                    )}
-                  </Button>
-                </div>
               </div>
             </SheetContent>
           </Sheet>
