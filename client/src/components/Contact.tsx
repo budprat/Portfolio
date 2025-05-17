@@ -67,8 +67,8 @@ export default function Contact() {
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email",
-      value: "prateek.budhwar@gmail.com",
-      link: "mailto:prateek.budhwar@gmail.com"
+      value: "p.budhwar@gmail.com",
+      link: "mailto:p.budhwar@gmail.com"
     },
     {
       icon: <Phone className="h-5 w-5" />,
