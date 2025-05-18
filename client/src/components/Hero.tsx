@@ -86,13 +86,13 @@ export default function Hero() {
                 className="px-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] group"
               >
                 <span className="relative z-10">Get in Touch</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-violet-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
                 onClick={() => scrollToSection('projects')}
-                className="px-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] hover:border-primary"
+                className="px-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:translate-y-[-2px] hover:border-blue-500 hover:text-blue-500"
               >
                 View My Projects
               </Button>
@@ -108,7 +108,7 @@ export default function Hero() {
                 href="https://github.com/budprat" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-600 hover:text-primary text-xl transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                className="text-muted-foreground hover:text-blue-500 text-xl transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-blue-500 after:to-violet-500 after:transition-all after:duration-300 hover:after:w-full"
                 aria-label="GitHub Profile"
               >
                 <Github className="h-6 w-6" />
@@ -117,7 +117,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/prateek-budhwar-212a92314/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-600 hover:text-primary text-xl transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                className="text-muted-foreground hover:text-blue-500 text-xl transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-blue-500 after:to-violet-500 after:transition-all after:duration-300 hover:after:w-full"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="h-6 w-6" />
