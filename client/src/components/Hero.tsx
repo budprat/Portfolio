@@ -138,20 +138,20 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            <div className="relative">
+            <div className="relative max-w-[250px] mx-auto lg:mx-0">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-70"></div>
-              <div className="relative bg-gray-900 rounded-full p-2">
+              <div className="relative bg-gray-900 rounded-full p-1.5">
                 <img 
                   src={profileImage} 
                   alt="Prateek Budhwar profile picture" 
-                  className="rounded-full w-full h-auto aspect-square object-cover border-4 border-gray-800" 
+                  className="rounded-full w-full h-auto aspect-square object-cover border-3 border-gray-800" 
                 />
               </div>
               
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-blue-500 rounded-full blur-xl opacity-70"></div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-500 rounded-full blur-xl opacity-70"></div>
-              <div className="absolute top-1/2 -right-6 w-8 h-8 bg-cyan-500 rounded-full blur-lg opacity-70"></div>
+              <div className="absolute -top-3 -right-3 w-8 h-8 bg-blue-500 rounded-full blur-xl opacity-70"></div>
+              <div className="absolute -bottom-3 -left-3 w-8 h-8 bg-purple-500 rounded-full blur-xl opacity-70"></div>
+              <div className="absolute top-1/2 -right-4 w-6 h-6 bg-cyan-500 rounded-full blur-lg opacity-70"></div>
             </div>
             
             {/* Decorative background elements */}
