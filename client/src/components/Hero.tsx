@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Github, Linkedin } from "lucide-react";
+import profileImage from "@assets/IMG_0178.jpeg";
 
 export default function Hero() {
   // Smooth scroll to section
@@ -137,11 +138,25 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            <img 
-              src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Modern tech workspace with data visualizations" 
-              className="rounded-2xl shadow-xl w-full h-auto object-cover" 
-            />
+            <div className="relative">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-70"></div>
+              <div className="relative bg-gray-900 rounded-full p-2">
+                <img 
+                  src={profileImage} 
+                  alt="Prateek Budhwar profile picture" 
+                  className="rounded-full w-full h-auto aspect-square object-cover border-4 border-gray-800" 
+                />
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-blue-500 rounded-full blur-xl opacity-70"></div>
+              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-purple-500 rounded-full blur-xl opacity-70"></div>
+              <div className="absolute top-1/2 -right-6 w-8 h-8 bg-cyan-500 rounded-full blur-lg opacity-70"></div>
+            </div>
+            
+            {/* Decorative background elements */}
+            <div className="hidden lg:block absolute top-20 right-10 w-64 h-64 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl -z-10"></div>
+            <div className="hidden lg:block absolute bottom-20 left-10 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 rounded-full blur-3xl -z-10"></div>
           </motion.div>
         </div>
       </div>
