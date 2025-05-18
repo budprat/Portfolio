@@ -32,7 +32,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="bg-white dark:bg-gray-800 py-16 md:py-24">
+    <section id="projects" className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16 reveal"

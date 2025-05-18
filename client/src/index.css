@@ -141,17 +141,22 @@
 
   body {
     @apply font-sans antialiased text-foreground tracking-tight;
-    background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--background) / 0.8)),
-                radial-gradient(circle at top left, hsl(var(--primary) / 0.1), transparent 50%),
-                radial-gradient(circle at bottom right, hsl(var(--accent) / 0.1), transparent 50%);
-    background-attachment: fixed;
-  }
-
-  .dark body {
     background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--background) / 0.9)),
                 radial-gradient(circle at top left, hsl(var(--primary) / 0.15), transparent 50%),
                 radial-gradient(circle at bottom right, hsl(var(--accent) / 0.15), transparent 50%);
     background-attachment: fixed;
+  }
+
+  section {
+    @apply bg-background text-foreground;
+  }
+
+  .card-hover {
+    @apply bg-background/50 backdrop-blur-md border-primary/20;
+  }
+
+  .project-card {
+    @apply bg-background/50 backdrop-blur-md;
   }
 
   h1, h2, h3, h4 {
