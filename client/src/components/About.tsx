@@ -45,13 +45,6 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            <motion.h3 
-              className="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
-              variants={itemVariants}
-            >
-              Who I Am
-            </motion.h3>
-            
             <motion.p 
               className="text-lg mb-6 text-gray-300 text-center"
               variants={itemVariants}
