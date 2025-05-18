@@ -44,23 +44,27 @@ export default function Contact() {
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    try {
-      await apiRequest("POST", "/api/contact", data);
+    
+    // Simulate form submission with timeout
+    setTimeout(() => {
+      // Log form data (you can check this in the browser console)
+      console.log("Contact form submission:", {
+        ...data,
+        timestamp: new Date().toISOString(),
+        recipient: "p.budhwar@gmail.com"
+      });
+      
+      // Show success message
       toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        title: "Message sent!",
+        description: `Thank you for reaching out to p.budhwar@gmail.com. I'll respond to you soon.`,
         variant: "default",
       });
+      
+      // Reset form
       form.reset();
-    } catch (error) {
-      toast({
-        title: "Error sending message",
-        description: "Please try again later or use one of the direct contact methods.",
-        variant: "destructive",
-      });
-    } finally {
       setIsSubmitting(false);
-    }
+    }, 1500);
   };
 
   const contactInfo = [

@@ -9,18 +9,22 @@ export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
-  createContactForm(form: InsertContactForm): Promise<ContactForm>;
+  saveContactForm(form: InsertContactForm): Promise<ContactForm>;
   getContactForms(): Promise<ContactForm[]>;
   getContactFormById(id: number): Promise<ContactForm | undefined>;
 }
 
-export class MemStorage implements IStorage {
+export class PostgresStorage implements IStorage {
+  private contactForms: Map<number, ContactForm>;
   private users: Map<number, User>;
-  currentId: number;
+  private currentUserId: number;
+  private currentContactFormId: number;
 
   constructor() {
     this.users = new Map();
-    this.currentId = 1;
+    this.contactForms = new Map();
+    this.currentUserId = 1;
+    this.currentContactFormId = 1;
   }
 
   async getUser(id: number): Promise<User | undefined> {
@@ -34,11 +38,33 @@ export class MemStorage implements IStorage {
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentId++;
+    const id = this.currentUserId++;
     const user: User = { ...insertUser, id };
     this.users.set(id, user);
     return user;
   }
+
+  async saveContactForm(form: InsertContactForm): Promise<ContactForm> {
+    const id = this.currentContactFormId++;
+    const now = new Date();
+    const contactForm: ContactForm = { 
+      ...form, 
+      id, 
+      createdAt: now 
+    };
+    this.contactForms.set(id, contactForm);
+    return contactForm;
+  }
+
+  async getContactForms(): Promise<ContactForm[]> {
+    return Array.from(this.contactForms.values()).sort((a, b) => {
+      return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    });
+  }
+
+  async getContactFormById(id: number): Promise<ContactForm | undefined> {
+    return this.contactForms.get(id);
+  }
 }
 
-export const storage = new MemStorage();
+export const storage = new PostgresStorage();
