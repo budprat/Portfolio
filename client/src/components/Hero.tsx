@@ -48,6 +48,29 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center pt-20">
       <div className="container mx-auto px-4 py-16 md:py-24">
+        {/* Introduction at top */}
+        <motion.div
+          className="mb-10 text-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h1 
+            className="mb-6 leading-tight"
+            variants={itemVariants}
+          >
+            <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-white">Hi, I'm Prateek Budhwar</span>
+            <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-blue-400">Data Engineer & AI Enthusiast</span>
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl md:text-2xl mb-6 text-gray-300 font-light leading-relaxed max-w-4xl mx-auto"
+            variants={itemVariants}
+          >
+            Transforming Earth Observation data into actionable insights through scalable pipelines and cloud-native applications.
+          </motion.p>
+        </motion.div>
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div 
             className="order-2 lg:order-1"
@@ -55,21 +78,6 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            <motion.h1 
-              className="mb-6 leading-tight"
-              variants={itemVariants}
-            >
-              <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-white">Hi, I'm Prateek Budhwar</span>
-              <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-blue-400">Data Engineer & AI Enthusiast</span>
-            </motion.h1>
-            
-            <motion.p 
-              className="text-xl md:text-2xl mb-6 text-gray-300 font-light leading-relaxed"
-              variants={itemVariants}
-            >
-              Transforming Earth Observation data into actionable insights through scalable pipelines and cloud-native applications.
-            </motion.p>
-            
             <motion.div
               className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-4 mb-8 inline-flex items-center gap-3"
               variants={itemVariants}
