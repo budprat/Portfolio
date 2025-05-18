@@ -6,6 +6,7 @@ import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WaveDivider from "@/components/WaveDivider";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -56,11 +57,31 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Education />
-        <Contact />
+        
+        <div className="relative">
+          <WaveDivider position="top" color="#f8fafc" height={60} />
+          <About />
+        </div>
+        
+        <div className="relative">
+          <WaveDivider position="top" color="#f0f9ff" height={60} />
+          <Experience />
+        </div>
+        
+        <div className="relative">
+          <WaveDivider position="top" color="#f8fafc" height={60} />
+          <Projects />
+        </div>
+        
+        <div className="relative">
+          <WaveDivider position="top" color="#f0f9ff" height={60} />
+          <Education />
+        </div>
+        
+        <div className="relative">
+          <WaveDivider position="top" color="#f8fafc" height={60} />
+          <Contact />
+        </div>
       </main>
       <Footer />
     </div>
