@@ -159,14 +159,14 @@ export default function Hero() {
             {/* AI Projects Section */}
             <motion.div 
               variants={itemVariants}
-              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-5 mx-auto lg:mx-0 max-w-sm"
+              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-5 mx-auto lg:mx-0 w-full"
             >
-              <h3 className="text-xl font-bold text-blue-400 mb-3">AI Projects</h3>
-              <div className="space-y-4">
-                <div>
+              <h3 className="text-xl font-bold text-blue-400 mb-4">AI Projects</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-gray-800/60 rounded-lg p-4">
                   <h4 className="font-semibold text-white">Notion AI Template Forge</h4>
                   <p className="text-sm text-gray-300 mb-2">AI-powered app generating custom Notion templates based on user interests and preferred styles.</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     {["React", "TypeScript", "Tailwind", "AI"].map((tech) => (
                       <span key={tech} className="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded-full">
                         {tech}
@@ -177,16 +177,16 @@ export default function Hero() {
                     href="https://github.com/budprat/notion-ai-template-forge"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center mt-3 text-sm text-blue-400 hover:text-blue-300"
+                    className="inline-flex items-center text-sm text-blue-400 hover:text-blue-300"
                   >
                     View Project <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </div>
                 
-                <div className="pt-3 border-t border-gray-700">
+                <div className="bg-gray-800/60 rounded-lg p-4">
                   <h4 className="font-semibold text-white">Delhi Date Eats Guide</h4>
                   <p className="text-sm text-gray-300 mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     {["React", "JavaScript", "CSS"].map((tech) => (
                       <span key={tech} className="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded-full">
                         {tech}
@@ -197,7 +197,7 @@ export default function Hero() {
                     href="https://github.com/budprat/delhi-date-eats-guide"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center mt-3 text-sm text-blue-400 hover:text-blue-300"
+                    className="inline-flex items-center text-sm text-blue-400 hover:text-blue-300"
                   >
                     View Project <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
