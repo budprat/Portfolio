@@ -32,7 +32,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="bg-background py-16 md:py-24">
+    <section id="projects" className="bg-slate-50 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16 reveal"
@@ -42,7 +42,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Featured Projects</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Delivering innovative solutions that make a difference.
           </p>
         </motion.div>
@@ -57,7 +57,7 @@ export default function Projects() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <Card className="overflow-hidden h-full bg-gray-50 dark:bg-gray-700 project-card">
+              <Card className="overflow-hidden h-full bg-white shadow-sm project-card">
                 <div className="relative">
                   <img 
                     src={project.imageUrl} 
@@ -65,7 +65,7 @@ export default function Projects() {
                     className="w-full h-64 object-cover" 
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-primary text-white dark:bg-primary-foreground dark:text-gray-900">
+                    <Badge className="bg-primary text-white">
                       {project.period}
                     </Badge>
                   </div>
@@ -73,18 +73,18 @@ export default function Projects() {
 
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-600 mb-4">
                     {project.description}
                   </p>
 
                   <div className="mb-4">
-                    <h4 className="font-semibold mb-2 text-primary dark:text-primary-foreground">
+                    <h4 className="font-semibold mb-2 text-primary">
                       Key Achievements:
                     </h4>
                     <ul className="space-y-2 mb-4">
                       {project.achievements.map((achievement, i) => (
                         <li key={i} className="flex">
-                          <Check className="h-5 w-5 text-green-600 dark:text-green-400 mt-1 mr-2 flex-shrink-0" />
+                          <Check className="h-5 w-5 text-green-600 mt-1 mr-2 flex-shrink-0" />
                           <span>{achievement}</span>
                         </li>
                       ))}
@@ -93,7 +93,7 @@ export default function Projects() {
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, i) => (
-                      <Badge key={i} variant="outline" className="bg-gray-200 dark:bg-gray-600">
+                      <Badge key={i} variant="outline" className="bg-gray-100 text-gray-700">
                         {tech}
                       </Badge>
                     ))}
@@ -105,7 +105,7 @@ export default function Projects() {
                     href={project.projectUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="inline-flex items-center text-primary dark:text-primary-foreground hover:underline"
+                    className="inline-flex items-center text-primary hover:underline"
                   >
                     View Project <ExternalLink className="ml-1 h-4 w-4" />
                   </a>
