@@ -1,10 +1,25 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, ExternalLink } from "lucide-react";
+import { Check, ExternalLink, Filter } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+
+// Project type definition
+type Project = {
+  title: string;
+  period: string;
+  description: string;
+  achievements: string[];
+  technologies: string[];
+  imageUrl: string;
+  projectUrl: string;
+  category: string;
+};
 
 export default function Projects() {
-  const projects = [
+  // Define the projects data with added categories
+  const projectsData: Project[] = [
     {
       title: "Terrabyte HPDA Platform",
       period: "2021-2023",
@@ -15,7 +30,8 @@ export default function Projects() {
       ],
       technologies: ["Python", "Dask", "Kubernetes", "ODC", "xarray", "GDAL"],
       imageUrl: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      projectUrl: "https://www.dlr.de/en/dw/research-transfer/hpda/high-performance-data-analysis"
+      projectUrl: "https://www.dlr.de/en/dw/research-transfer/hpda/high-performance-data-analysis",
+      category: "Data Engineering"
     },
     {
       title: "openEO (EU Horizon 2020)",
@@ -27,7 +43,21 @@ export default function Projects() {
       ],
       technologies: ["Python", "REST API", "Docker", "Kubernetes", "STAC", "Dask"],
       imageUrl: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      projectUrl: "https://github.com/Open-EO/openeo-spring-driver"
+      projectUrl: "https://github.com/Open-EO/openeo-spring-driver",
+      category: "API Development"
+    },
+    {
+      title: "EO Data Pipeline Automation",
+      period: "2017-2019",
+      description: "Automated Earth Observation data processing pipeline reducing manual intervention by 85%.",
+      achievements: [
+        "Created fully automated processing chain for satellite imagery",
+        "Developed cloud-based architecture processing 5TB of data daily"
+      ],
+      technologies: ["Python", "AWS", "Docker", "Machine Learning", "GIS"],
+      imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      projectUrl: "#",
+      category: "Cloud Computing"
     }
   ];
 
