@@ -18,19 +18,6 @@ export default function Projects() {
       projectUrl: "https://www.dlr.de/en/dw/research-transfer/hpda/high-performance-data-analysis"
     },
     {
-      title: "Delhi Date Eats Guide",
-      period: "2023-Present",
-      description: "A curated guide for romantic dining spots in Delhi, providing personalized recommendations for date nights.",
-      achievements: [
-        "Created a user-friendly interface for exploring romantic dining venues",
-        "Implemented interactive filtering by cuisine, ambiance, and price range"
-      ],
-      technologies: ["React", "JavaScript", "CSS", "GitHub Pages"],
-      imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      projectUrl: "https://github.com/budprat/delhi-date-eats-guide"
-    },
-
-    {
       title: "openEO (EU Horizon 2020)",
       period: "2018-2021",
       description: "Standardized API for satellite data processing, adopted by major European data providers.",
