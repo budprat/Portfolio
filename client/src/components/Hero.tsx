@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, ExternalLink } from "lucide-react";
 import profileImage from "@assets/IMG_0178.jpeg";
 
 export default function Hero() {
