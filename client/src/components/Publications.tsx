@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BookOpen, ExternalLink } from "lucide-react";
+import { BookOpen, ExternalLink, Youtube } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 
 export default function Publications() {
@@ -9,7 +9,8 @@ export default function Publications() {
       authors: "Jacob A, Vicente-Guijalba F, Claus M, Zellner PJ, Moral F, Budhwar P, Mougnaud P",
       event: "ESA Phi Week",
       year: "2020",
-      url: "https://bia.unibz.it/esploro/outputs/991006043940201241"
+      url: "https://bia.unibz.it/esploro/outputs/991006043940201241",
+      videoUrl: "https://youtu.be/dnrDfLDciGQ?si=n8cjtwyzzh08mFo1"
     },
     {
       title: "OpenEO - an API for Standardised Access to Big Earth Observation Data in a Landscape of a Growing Number of EO Cloud Providers",
@@ -73,14 +74,27 @@ export default function Publications() {
                         <span>{publication.year}</span>
                       </div>
                       
-                      <a 
-                        href={publication.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="inline-flex items-center text-primary group-hover:text-primary/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
-                      >
-                        View Publication <ExternalLink className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </a>
+                      <div className="flex items-center space-x-4">
+                        {'videoUrl' in publication && (
+                          <a 
+                            href={publication.videoUrl as string} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="inline-flex items-center text-red-500 hover:text-red-600 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
+                          >
+                            Watch Video <Youtube className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                          </a>
+                        )}
+                        
+                        <a 
+                          href={publication.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="inline-flex items-center text-primary group-hover:text-primary/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
+                        >
+                          View Publication <ExternalLink className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
