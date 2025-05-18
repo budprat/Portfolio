@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Sun, Moon } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useTheme } from "next-themes";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,7 +29,7 @@ export default function Header() {
 
     // Initial check
     handleScroll();
-    
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -83,33 +84,29 @@ export default function Header() {
             </a>
           ))}
         </nav>
-
-        <div className="flex items-center gap-4">
-          {/* Mobile Menu */}
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" aria-label="Menu">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="bg-gray-900 border-gray-800">
-              <div className="flex flex-col gap-6 mt-10">
-                {navItems.map((item) => (
-                  <a
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`text-lg font-medium cursor-pointer hover:text-primary-foreground transition-colors duration-200 ${
-                      activeSection === item.id ? 'text-primary-foreground' : 'text-gray-400'
-                    }`}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </SheetContent>
-          </Sheet>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>
   );
 }
+
+const ThemeToggle = () => {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="rounded-full"
+    >
+      <Sun className="h-5 w-5 rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0" />
+      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100" />
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  );
+};
+`
