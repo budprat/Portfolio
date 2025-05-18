@@ -1,74 +1,9 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
-  subject: z.string().min(5, { message: "Subject must be at least 5 characters" }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
-});
-
-type FormValues = z.infer<typeof formSchema>;
 
 export default function Contact() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  const [formSuccess, setFormSuccess] = useState(false);
-  
-  const onSubmit = async (data: FormValues) => {
-    setIsSubmitting(true);
-    
-    try {
-      // Simulate form submission
-      console.log("Contact form submission:", {
-        ...data,
-        timestamp: new Date().toISOString(),
-        recipient: "p.budhwar@gmail.com"
-      });
-      
-      // Wait 1 second to simulate network request
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Show success state
-      setFormSuccess(true);
-      form.reset();
-    } catch (error) {
-      console.error("Form submission error:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const contactInfo = [
+  const contactMethods = [
     {
       icon: <Mail className="h-5 w-5" />,
       title: "Email",
@@ -126,7 +61,7 @@ export default function Contact() {
             />
             
             <div className="mt-8 space-y-4">
-              {contactInfo.map((item, index) => (
+              {contactMethods.map((method, index) => (
                 <motion.div 
                   key={index} 
                   className="flex items-center"
@@ -136,17 +71,17 @@ export default function Contact() {
                   transition={{ duration: 0.4, delay: 0.3 + (index * 0.1) }}
                 >
                   <div className="h-12 w-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
-                    {item.icon}
+                    {method.icon}
                   </div>
                   <div className="ml-4">
-                    <h4 className="text-lg font-semibold">{item.title}</h4>
+                    <h4 className="text-lg font-semibold">{method.title}</h4>
                     <a 
-                      href={item.link} 
-                      target={item.title === "LinkedIn" || item.title === "GitHub" ? "_blank" : undefined}
-                      rel={item.title === "LinkedIn" || item.title === "GitHub" ? "noopener noreferrer" : undefined}
-                      className="text-gray-600 hover:text-primary"
+                      href={method.link} 
+                      target={method.title === "LinkedIn" || method.title === "GitHub" ? "_blank" : undefined}
+                      rel={method.title === "LinkedIn" || method.title === "GitHub" ? "noopener noreferrer" : undefined}
+                      className="text-gray-600 hover:text-primary transition-colors"
                     >
-                      {item.value}
+                      {method.value}
                     </a>
                   </div>
                 </motion.div>
@@ -161,115 +96,57 @@ export default function Contact() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="bg-white shadow-sm">
-              <CardContent className="p-6 pt-6">
-                <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+            <Card className="bg-white shadow-sm hover:shadow-md transition-all duration-300">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
                 
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Your Name</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Enter your name" 
-                              className="w-full p-3 bg-gray-50" 
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Your Email</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Enter your email" 
-                              type="email"
-                              className="w-full p-3 bg-gray-50" 
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="subject"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Subject</FormLabel>
-                          <FormControl>
-                            <Input 
-                              placeholder="Enter subject" 
-                              className="w-full p-3 bg-gray-50" 
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Message</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="What would you like to discuss?" 
-                              rows={5}
-                              className="w-full p-3 bg-gray-50" 
-                              {...field} 
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    {formSuccess ? (
-                      <div className="bg-green-50 border border-green-200 rounded-md p-4 text-center">
-                        <div className="flex justify-center mb-2">
-                          <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                              <path d="M20 6L9 17l-5-5" />
-                            </svg>
-                          </div>
-                        </div>
-                        <h4 className="text-green-800 font-medium mb-1">Message Sent!</h4>
-                        <p className="text-green-700 text-sm">Thank you for reaching out. I'll respond to you at {form.getValues().email} soon.</p>
-                        <button 
-                          className="mt-3 text-sm text-green-600 hover:text-green-700"
-                          onClick={() => setFormSuccess(false)}
-                        >
-                          Send another message
-                        </button>
-                      </div>
-                    ) : (
-                      <Button 
-                        type="submit" 
-                        className="w-full py-3"
-                        disabled={isSubmitting}
+                <div className="space-y-6">
+                  <p className="text-gray-700">
+                    I'm always interested in new opportunities and collaborations. Feel free to reach out directly 
+                    through any of the contact methods listed here.
+                  </p>
+                  
+                  <div className="bg-primary/5 p-5 rounded-lg border border-primary/10">
+                    <h4 className="font-medium text-lg text-primary mb-3">Contact Me Directly</h4>
+                    <div className="space-y-2">
+                      <a 
+                        href="mailto:p.budhwar@gmail.com" 
+                        className="flex items-center text-gray-700 hover:text-primary transition-colors"
                       >
-                        {isSubmitting ? "Sending..." : "Send Message"}
-                      </Button>
-                    )}
-                  </form>
-                </Form>
+                        <Mail className="h-5 w-5 mr-3" />
+                        <span>p.budhwar@gmail.com</span>
+                      </a>
+                      <a 
+                        href="tel:+919350569323" 
+                        className="flex items-center text-gray-700 hover:text-primary transition-colors"
+                      >
+                        <Phone className="h-5 w-5 mr-3" />
+                        <span>+91 9350569323</span>
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4">
+                    <a 
+                      href="https://www.linkedin.com/in/prateek-budhwar-212a92314/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full bg-[#0077B5]/10 hover:bg-[#0077B5]/20 text-[#0077B5] py-3 px-4 rounded flex items-center justify-center transition-colors"
+                    >
+                      <Linkedin className="h-5 w-5 mr-2" />
+                      <span>Connect on LinkedIn</span>
+                    </a>
+                    <a 
+                      href="https://github.com/budprat" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="w-full bg-gray-800/10 hover:bg-gray-800/20 text-gray-800 py-3 px-4 rounded flex items-center justify-center transition-colors"
+                    >
+                      <Github className="h-5 w-5 mr-2" />
+                      <span>Follow on GitHub</span>
+                    </a>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </motion.div>
