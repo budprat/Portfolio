@@ -39,20 +39,7 @@ export default function About() {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div 
-            className="reveal"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="Earth observation satellite imagery" 
-              className="rounded-2xl shadow-xl w-full h-auto" 
-            />
-          </motion.div>
+        <div className="max-w-4xl mx-auto">
           
           <motion.div 
             className="reveal"
@@ -62,28 +49,28 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h3 
-              className="text-2xl md:text-3xl font-bold font-heading mb-6"
+              className="text-3xl md:text-4xl font-bold text-white mb-6 text-center"
               variants={itemVariants}
             >
               Who I Am
             </motion.h3>
             
             <motion.p 
-              className="text-lg mb-6 text-gray-600 dark:text-gray-300"
+              className="text-lg mb-6 text-gray-300 text-center"
               variants={itemVariants}
             >
               I'm a results-oriented Data Engineer with 5+ years of experience in building scalable Earth Observation data processing pipelines, systems, and cloud-native applications.
             </motion.p>
             
             <motion.p 
-              className="text-lg mb-6 text-gray-600 dark:text-gray-300"
+              className="text-lg mb-6 text-gray-300 text-center"
               variants={itemVariants}
             >
               With a proven track record of architecting distributed computing frameworks and implementing scalable solutions for large-volume geospatial data processing, I've consistently optimized workflows for large-scale satellite datasets.
             </motion.p>
             
             <motion.p 
-              className="text-lg mb-8 text-gray-600 dark:text-gray-300"
+              className="text-lg mb-8 text-gray-300 text-center"
               variants={itemVariants}
             >
               I'm now transitioning my extensive data engineering expertise toward AI-focused roles, eager to contribute to innovative machine learning applications.

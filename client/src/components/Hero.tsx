@@ -59,15 +59,15 @@ export default function Hero() {
               className="mb-6 leading-tight"
               variants={itemVariants}
             >
-              <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold bg-gradient-to-r from-blue-500 via-indigo-400 to-purple-600 text-transparent bg-clip-text">Hi, I'm Prateek Budhwar</span>
-              <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-cyan-400">Data Engineer & AI Enthusiast</span>
+              <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-white">Hi, I'm Prateek Budhwar</span>
+              <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-blue-400">Data Engineer & AI Enthusiast</span>
             </motion.h1>
             
             <motion.p 
               className="text-xl md:text-2xl mb-6 text-gray-300 font-light leading-relaxed"
               variants={itemVariants}
             >
-              Transforming <span className="text-blue-400 font-medium">Earth Observation data</span> into actionable insights through <span className="text-emerald-400 font-medium">scalable pipelines</span> and <span className="text-amber-400 font-medium">cloud-native applications</span>.
+              Transforming Earth Observation data into actionable insights through scalable pipelines and cloud-native applications.
             </motion.p>
             
             <motion.div
