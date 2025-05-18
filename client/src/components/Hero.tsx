@@ -63,11 +63,27 @@ export default function Hero() {
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-2xl mb-8 text-gray-300 font-light leading-relaxed"
+              className="text-xl md:text-2xl mb-6 text-gray-300 font-light leading-relaxed"
               variants={itemVariants}
             >
               Transforming <span className="text-blue-400 font-medium">Earth Observation data</span> into actionable insights through <span className="text-emerald-400 font-medium">scalable pipelines</span> and <span className="text-amber-400 font-medium">cloud-native applications</span>.
             </motion.p>
+            
+            <motion.div
+              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-4 mb-8 inline-flex items-center gap-3"
+              variants={itemVariants}
+            >
+              <div className="flex-shrink-0 p-2 bg-gray-700 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-yellow-400">
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+                  <path d="M15.6 10a4 4 0 1 1-8 2.4"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-semibold text-yellow-400">Arctic Code Vault Contributor</h4>
+                <p className="text-sm text-gray-300">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
+              </div>
+            </motion.div>
             
             <motion.div 
               className="flex flex-wrap gap-4"
