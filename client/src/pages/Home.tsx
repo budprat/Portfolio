@@ -59,8 +59,6 @@ export default function Home() {
         <About />
         <Experience />
         <Projects />
-        <TechStack />
-        <Skills />
         <Education />
         <Contact />
       </main>
