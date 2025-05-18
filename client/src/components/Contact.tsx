@@ -42,29 +42,30 @@ export default function Contact() {
     },
   });
 
+  const [formSuccess, setFormSuccess] = useState(false);
+  
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Simulate form submission with timeout
-    setTimeout(() => {
-      // Log form data (you can check this in the browser console)
+    try {
+      // Simulate form submission
       console.log("Contact form submission:", {
         ...data,
         timestamp: new Date().toISOString(),
         recipient: "p.budhwar@gmail.com"
       });
       
-      // Show success message
-      toast({
-        title: "Message sent!",
-        description: `Thank you for reaching out to p.budhwar@gmail.com. I'll respond to you soon.`,
-        variant: "default",
-      });
+      // Wait 1 second to simulate network request
+      await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Reset form
+      // Show success state
+      setFormSuccess(true);
       form.reset();
+    } catch (error) {
+      console.error("Form submission error:", error);
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   const contactInfo = [
@@ -240,13 +241,33 @@ export default function Contact() {
                       )}
                     />
                     
-                    <Button 
-                      type="submit" 
-                      className="w-full py-3"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </Button>
+                    {formSuccess ? (
+                      <div className="bg-green-50 border border-green-200 rounded-md p-4 text-center">
+                        <div className="flex justify-center mb-2">
+                          <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                          </div>
+                        </div>
+                        <h4 className="text-green-800 font-medium mb-1">Message Sent!</h4>
+                        <p className="text-green-700 text-sm">Thank you for reaching out. I'll respond to you at {form.getValues().email} soon.</p>
+                        <button 
+                          className="mt-3 text-sm text-green-600 hover:text-green-700"
+                          onClick={() => setFormSuccess(false)}
+                        >
+                          Send another message
+                        </button>
+                      </div>
+                    ) : (
+                      <Button 
+                        type="submit" 
+                        className="w-full py-3"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? "Sending..." : "Send Message"}
+                      </Button>
+                    )}
                   </form>
                 </Form>
               </CardContent>
