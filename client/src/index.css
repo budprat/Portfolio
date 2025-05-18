@@ -3,48 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --background: 222 47% 11%;
-  --foreground: 210 40% 98%;
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 25% 75%;
-  --popover: 222 47% 11%;
-  --popover-foreground: 210 40% 98%;
-  --card: 222 47% 11%;
-  --card-foreground: 210 40% 98%;
-  --border: 217 33% 17%;
-  --input: 217 33% 17%;
-  --primary: 263 85% 65%;
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --primary: 263 85% 50%;
   --primary-foreground: 210 40% 98%;
   --secondary: 221 90% 65%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary-foreground: 222 47% 11%;
   --accent: 316 80% 60%;
-  --accent-foreground: 210 40% 98%;
+  --accent-foreground: 222 47% 11%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
-  --ring: 263 85% 65%;
+  --ring: 263 85% 50%;
   --radius: 0.75rem;
-}
-
-.dark {
-  --background: 225 25% 8%;
-  --foreground: 210 25% 98%;
-  --muted: 225 25% 15%;
-  --muted-foreground: 215 20% 70%;
-  --popover: 225 25% 8%;
-  --popover-foreground: 210 25% 98%;
-  --card: 225 25% 8%;
-  --card-foreground: 210 25% 98%;
-  --border: 225 25% 15%;
-  --input: 225 25% 15%;
-  --primary: 250 95% 65%;
-  --primary-foreground: 210 25% 98%;
-  --secondary: 225 25% 15%;
-  --secondary-foreground: 210 25% 98%;
-  --accent: 250 95% 35%;
-  --accent-foreground: 210 25% 98%;
-  --destructive: 0 65% 35%;
-  --destructive-foreground: 210 25% 98%;
-  --ring: 250 95% 65%;
 }
 
 /* Particle background animation */

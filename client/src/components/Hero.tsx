@@ -59,12 +59,12 @@ export default function Hero() {
             className="mb-6 leading-tight"
             variants={itemVariants}
           >
-            <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-white">Hi, I'm Prateek Budhwar</span>
-            <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-blue-400">Data Engineer & AI Enthusiast</span>
+            <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-gray-900">Hi, I'm Prateek Budhwar</span>
+            <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-primary">Data Engineer & AI Enthusiast</span>
           </motion.h1>
 
           <motion.p 
-            className="text-xl md:text-2xl mb-6 text-gray-300 font-light leading-relaxed max-w-4xl mx-auto"
+            className="text-xl md:text-2xl mb-6 text-gray-700 font-light leading-relaxed max-w-4xl mx-auto"
             variants={itemVariants}
           >
             Transforming Earth Observation data into actionable insights through scalable pipelines and cloud-native applications.
@@ -79,18 +79,18 @@ export default function Hero() {
             animate="visible"
           >
             <motion.div
-              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-4 mb-8 inline-flex items-center gap-3"
+              className="bg-slate-50 border border-slate-200 shadow-sm rounded-lg p-4 mb-8 inline-flex items-center gap-3"
               variants={itemVariants}
             >
-              <div className="flex-shrink-0 p-2 bg-gray-700 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-yellow-400">
+              <div className="flex-shrink-0 p-2 bg-amber-100 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-600">
                   <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
                   <path d="M15.6 10a4 4 0 1 1-8 2.4"></path>
                 </svg>
               </div>
               <div>
-                <h4 className="font-semibold text-yellow-400">Arctic Code Vault Contributor</h4>
-                <p className="text-sm text-gray-300">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
+                <h4 className="font-semibold text-amber-600">Arctic Code Vault Contributor</h4>
+                <p className="text-sm text-gray-600">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
               </div>
             </motion.div>
 
@@ -123,7 +123,7 @@ export default function Hero() {
                 href="https://github.com/budprat" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-foreground text-xl transition-colors duration-200"
+                className="text-gray-600 hover:text-primary text-xl transition-colors duration-200"
                 aria-label="GitHub Profile"
               >
                 <Github className="h-6 w-6" />
@@ -132,7 +132,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/prateek-budhwar-212a92314/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary-foreground text-xl transition-colors duration-200"
+                className="text-gray-600 hover:text-primary text-xl transition-colors duration-200"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="h-6 w-6" />
@@ -147,36 +147,36 @@ export default function Hero() {
             animate="visible"
           >
             <motion.div variants={imageVariants}>
-              <div className="relative max-w-[250px] mx-auto lg:mx-0">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-70"></div>
-                <div className="relative bg-gray-900 rounded-full p-1.5">
+              <div className="relative max-w-[200px] mx-auto lg:mx-0">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur opacity-50"></div>
+                <div className="relative bg-white rounded-full p-1.5">
                   <img 
                     src={profileImage} 
                     alt="Prateek Budhwar profile picture" 
-                    className="rounded-full w-full h-auto aspect-square object-cover border-3 border-gray-800" 
+                    className="rounded-full w-full h-auto aspect-square object-cover border-2 border-slate-100" 
                   />
                 </div>
 
                 {/* Decorative elements */}
-                <div className="absolute -top-3 -right-3 w-8 h-8 bg-blue-500 rounded-full blur-xl opacity-70"></div>
-                <div className="absolute -bottom-3 -left-3 w-8 h-8 bg-purple-500 rounded-full blur-xl opacity-70"></div>
-                <div className="absolute top-1/2 -right-4 w-6 h-6 bg-cyan-500 rounded-full blur-lg opacity-70"></div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full blur-xl opacity-40"></div>
+                <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-purple-500 rounded-full blur-xl opacity-40"></div>
+                <div className="absolute top-1/2 -right-3 w-4 h-4 bg-cyan-500 rounded-full blur-lg opacity-40"></div>
               </div>
             </motion.div>
 
             {/* AI Projects Section */}
             <motion.div 
               variants={itemVariants}
-              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-5 mx-auto lg:mx-0 w-full"
+              className="bg-white shadow-sm border border-slate-200 rounded-lg p-5 mx-auto lg:mx-0 w-full"
             >
-              <h3 className="text-xl font-bold text-blue-400 mb-4">AI Projects</h3>
+              <h3 className="text-xl font-bold text-primary mb-4">AI Projects</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-gray-800/60 rounded-lg p-4">
-                  <h4 className="font-semibold text-white">Notion AI Template Forge</h4>
-                  <p className="text-sm text-gray-300 mb-2">AI-powered app generating custom Notion templates based on user interests and preferred styles.</p>
+                <div className="bg-slate-50 rounded-lg p-4 shadow-sm">
+                  <h4 className="font-semibold text-gray-900">Notion AI Template Forge</h4>
+                  <p className="text-sm text-gray-600 mb-2">AI-powered app generating custom Notion templates based on user interests and preferred styles.</p>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {["React", "TypeScript", "Tailwind", "AI"].map((tech) => (
-                      <span key={tech} className="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded-full">
+                      <span key={tech} className="text-xs px-2 py-1 bg-slate-100 text-gray-700 rounded-full">
                         {tech}
                       </span>
                     ))}
@@ -185,18 +185,18 @@ export default function Hero() {
                     href="https://github.com/budprat/notion-ai-template-forge"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-blue-400 hover:text-blue-300"
+                    className="inline-flex items-center text-sm text-primary hover:text-primary/80"
                   >
                     View Project <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </div>
 
-                <div className="bg-gray-800/60 rounded-lg p-4">
-                  <h4 className="font-semibold text-white">Delhi Date Eats Guide</h4>
-                  <p className="text-sm text-gray-300 mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
+                <div className="bg-slate-50 rounded-lg p-4 shadow-sm">
+                  <h4 className="font-semibold text-gray-900">Delhi Date Eats Guide</h4>
+                  <p className="text-sm text-gray-600 mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {["React", "JavaScript", "CSS"].map((tech) => (
-                      <span key={tech} className="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded-full">
+                      <span key={tech} className="text-xs px-2 py-1 bg-slate-100 text-gray-700 rounded-full">
                         {tech}
                       </span>
                     ))}
@@ -205,7 +205,7 @@ export default function Hero() {
                     href="https://github.com/budprat/delhi-date-eats-guide"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-blue-400 hover:text-blue-300"
+                    className="inline-flex items-center text-sm text-primary hover:text-primary/80"
                   >
                     View Project <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
