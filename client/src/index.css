@@ -1,118 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); /* Pixel font */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Background patterns */
-.y2k-grid {
-  background-image: linear-gradient(to right, rgba(119, 185, 255, 0.1) 1px, transparent 1px), 
-                    linear-gradient(to bottom, rgba(119, 185, 255, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-.y2k-dots {
-  background-image: radial-gradient(circle, rgba(203, 138, 255, 0.15) 1px, transparent 1px);
-  background-size: 15px 15px;
-}
-
-/* Chrome/metallic gradients */
-.chrome-gradient {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5), 
-              0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Bubble buttons */
-.bubble-button {
-  border-radius: 20px;
-  padding: 10px 20px;
-  font-weight: 700;
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease-in-out;
-  transform-origin: center;
-  border: 2px solid white;
-}
-
-.bubble-button:hover {
-  transform: scale(1.05) translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Y2K Card */
-.y2k-card {
-  border-radius: 20px;
-  border: 3px solid white;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.y2k-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* 3D Effect */
-.threed-text {
-  text-shadow: 2px 2px 0px #FF9EE0, 4px 4px 0px #75D5FA;
-  transform: perspective(500px) rotateX(5deg);
-}
-
-/* Holographic effect */
-.holographic {
-  background: linear-gradient(135deg, 
-    #FF9EE0, #75D5FA, #C1FF72, #FBFF12, #CB8AFF
-  );
-  background-size: 400% 400%;
-  animation: holographic 5s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@keyframes holographic {
-  0% { background-position: 0% 50% }
-  50% { background-position: 100% 50% }
-  100% { background-position: 0% 50% }
-}
-
-/* Y2K Revival Theme Colors */
 :root {
-  /* Base colors */
-  --background: 220 20% 97%; /* Pearl gradient from F5F7FA to E4E4E4 */
-  --foreground: 0 0% 0%; /* Black text for headlines #000000 */
-  --muted: 220 10% 85%; /* Light silver #D1D8E0 */
-  --muted-foreground: 260 40% 40%; /* Deep purple #4E3D8B */
-  
-  /* UI elements */
-  --popover: 220 10% 85%; /* Chrome gradients #D1D8E0 */
-  --popover-foreground: 260 40% 40%; /* Deep purple #4E3D8B */
-  --card: 220 10% 85%; /* Metallic effect */
-  --card-foreground: 260 40% 40%; /* Deep purple #4E3D8B */
-  
-  /* Borders and inputs */
-  --border: 220 15% 75%; /* Chrome/metallic #A4B0BE */
-  --input: 220 15% 75%; /* Chrome/metallic #A4B0BE */
-  
-  /* Accent colors */
-  --primary: 328 100% 81%; /* Bubblegum pink #FF9EE0 */
-  --primary-foreground: 0 0% 0%; /* Black text on pink */
-  --secondary: 197 93% 72%; /* Electric blue #75D5FA */
-  --secondary-foreground: 0 0% 0%; /* Black text on blue */
-  --accent: 97 100% 73%; /* Lime green #C1FF72 */
-  --accent-foreground: 0 0% 0%; /* Black on lime */
-  --destructive: 0 84% 60%; /* Keep destructive */
-  --destructive-foreground: 0 0% 100%; /* White text on destructive */
-  
-  /* Extras */
-  --cyber-yellow: 59 100% 54%; /* Cyber yellow #FBFF12 */
-  --violet: 270 100% 77%; /* Violet #CB8AFF */
-  --ring: 328 100% 81%; /* Bubblegum pink for focus rings */
-  --radius: 1.5rem; /* Extra rounded for Y2K bubble effect */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --primary: 263 85% 50%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 221 90% 65%;
+  --secondary-foreground: 222 47% 11%;
+  --accent: 316 80% 60%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 263 85% 50%;
+  --radius: 0.75rem;
 }
 
 /* Particle background animation */
