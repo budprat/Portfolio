@@ -32,8 +32,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 overflow-hidden relative">
-      <div className="container mx-auto px-4 py-16 md:py-24">
+    <section id="home" className="min-h-screen flex items-center pt-16 overflow-hidden relative">
+      <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Animated Typography */}
           <motion.div className="lg:order-1 z-10">
@@ -139,7 +139,7 @@ export default function Hero() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.0 }}
             >
-              <div className="relative max-w-[200px] mx-auto lg:ml-auto">
+              <div className="relative max-w-[300px] mx-auto lg:ml-auto">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur opacity-50"></div>
                 <div className="relative bg-white rounded-full p-1.5">
                   <img 

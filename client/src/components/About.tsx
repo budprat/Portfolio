@@ -24,10 +24,10 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="bg-white py-16 md:py-24">
+    <section id="about" className="bg-white py-8 md:py-12">
       <div className="container mx-auto px-4">
         <motion.div 
-          className="text-center mb-16 reveal"
+          className="text-center mb-8 reveal"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

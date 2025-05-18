@@ -32,10 +32,10 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-16 md:py-24">
+    <section id="experience" className="py-8 md:py-12">
       <div className="container mx-auto px-4">
         <motion.div 
-          className="text-center mb-16 reveal"
+          className="text-center mb-8 reveal"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -98,7 +98,7 @@ export default function Experience() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         .timeline-container::after {
           content: '';
           position: absolute;
@@ -110,13 +110,9 @@ export default function Experience() {
           margin-left: -1px;
         }
         
-        .dark .timeline-container::after {
-          background-color: #4b5563;
-        }
-        
         .timeline-item {
           position: relative;
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
         
         .timeline-dot {
@@ -128,7 +124,7 @@ export default function Experience() {
           z-index: 1;
           transform: translateX(-50%);
         }
-      `}</style>
+      ` }} />
     </section>
   );
 }
