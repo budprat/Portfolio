@@ -101,7 +101,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Let's discuss how we can work together on your next project.
           </p>
         </motion.div>
@@ -130,7 +130,7 @@ export default function Contact() {
                   viewport={{ once: true, margin: "-150px" }}
                   transition={{ duration: 0.4, delay: 0.3 + (index * 0.1) }}
                 >
-                  <div className="h-12 w-12 rounded-full bg-primary text-primary-foreground dark:bg-primary-foreground dark:text-primary flex items-center justify-center">
+                  <div className="h-12 w-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
                     {item.icon}
                   </div>
                   <div className="ml-4">
@@ -139,7 +139,7 @@ export default function Contact() {
                       href={item.link} 
                       target={item.title === "LinkedIn" || item.title === "GitHub" ? "_blank" : undefined}
                       rel={item.title === "LinkedIn" || item.title === "GitHub" ? "noopener noreferrer" : undefined}
-                      className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary-foreground"
+                      className="text-gray-600 hover:text-primary"
                     >
                       {item.value}
                     </a>
@@ -156,7 +156,7 @@ export default function Contact() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="bg-white dark:bg-gray-800">
+            <Card className="bg-white shadow-sm">
               <CardContent className="p-6 pt-6">
                 <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
                 
@@ -171,7 +171,7 @@ export default function Contact() {
                           <FormControl>
                             <Input 
                               placeholder="Enter your name" 
-                              className="w-full p-3 bg-gray-50 dark:bg-gray-700" 
+                              className="w-full p-3 bg-gray-50" 
                               {...field} 
                             />
                           </FormControl>
@@ -190,7 +190,7 @@ export default function Contact() {
                             <Input 
                               placeholder="Enter your email" 
                               type="email"
-                              className="w-full p-3 bg-gray-50 dark:bg-gray-700" 
+                              className="w-full p-3 bg-gray-50" 
                               {...field} 
                             />
                           </FormControl>
@@ -208,7 +208,7 @@ export default function Contact() {
                           <FormControl>
                             <Input 
                               placeholder="Enter subject" 
-                              className="w-full p-3 bg-gray-50 dark:bg-gray-700" 
+                              className="w-full p-3 bg-gray-50" 
                               {...field} 
                             />
                           </FormControl>
@@ -227,7 +227,7 @@ export default function Contact() {
                             <Textarea 
                               placeholder="What would you like to discuss?" 
                               rows={5}
-                              className="w-full p-3 bg-gray-50 dark:bg-gray-700" 
+                              className="w-full p-3 bg-gray-50" 
                               {...field} 
                             />
                           </FormControl>
