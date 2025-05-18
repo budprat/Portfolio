@@ -84,9 +84,9 @@ export default function Header() {
             </a>
           ))}
         </nav>
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-          </div>
+        
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
         </div>
       </div>
     </header>
@@ -109,4 +109,3 @@ const ThemeToggle = () => {
     </Button>
   );
 };
-`
