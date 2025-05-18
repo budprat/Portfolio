@@ -41,7 +41,7 @@ export default function Skills() {
             Leveraging cutting-edge technologies to solve complex problems.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div 
             className="order-2 lg:order-1 reveal space-y-6"
@@ -73,7 +73,7 @@ export default function Skills() {
               </motion.div>
             ))}
           </motion.div>
-          
+
           <motion.div 
             className="order-1 lg:order-2 reveal"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -94,7 +94,7 @@ export default function Skills() {
         @keyframes progressAnimation {
           from { width: 0; }
         }
-        
+
         .progress-bar {
           animation: progressAnimation 1.5s ease-out forwards;
         }
