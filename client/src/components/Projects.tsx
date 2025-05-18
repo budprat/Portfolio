@@ -46,7 +46,7 @@ export default function Projects() {
             Delivering innovative solutions that make a difference.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div 
@@ -70,13 +70,13 @@ export default function Projects() {
                     </Badge>
                   </div>
                 </div>
-                
+
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {project.description}
                   </p>
-                  
+
                   <div className="mb-4">
                     <h4 className="font-semibold mb-2 text-primary dark:text-primary-foreground">
                       Key Achievements:
@@ -90,7 +90,7 @@ export default function Projects() {
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, i) => (
                       <Badge key={i} variant="outline" className="bg-gray-200 dark:bg-gray-600">
@@ -99,7 +99,7 @@ export default function Projects() {
                     ))}
                   </div>
                 </CardContent>
-                
+
                 <CardFooter className="px-6 pb-6 pt-0">
                   <a 
                     href={project.projectUrl} 

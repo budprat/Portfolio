@@ -3,25 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --background: 220 25% 98%;
-  --foreground: 225 25% 15%;
-  --muted: 220 15% 94%;
-  --muted-foreground: 220 10% 45%;
-  --popover: 220 25% 98%;
-  --popover-foreground: 225 25% 15%;
-  --card: 220 25% 98%;
-  --card-foreground: 225 25% 15%;
-  --border: 220 13% 90%;
-  --input: 220 13% 90%;
-  --primary: 250 95% 65%;
-  --primary-foreground: 210 20% 98%;
-  --secondary: 220 15% 94%;
-  --secondary-foreground: 225 25% 15%;
-  --accent: 250 95% 97%;
-  --accent-foreground: 250 95% 65%;
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+  --card: 222 47% 11%;
+  --card-foreground: 210 40% 98%;
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --primary: 263 70% 50%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 221 83% 53%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 316 70% 50%;
+  --accent-foreground: 210 40% 98%;
   --destructive: 0 84% 60%;
-  --destructive-foreground: 210 20% 98%;
-  --ring: 250 95% 65%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 263 70% 50%;
   --radius: 0.75rem;
 }
 
@@ -45,6 +45,70 @@
   --destructive: 0 65% 35%;
   --destructive-foreground: 210 25% 98%;
   --ring: 250 95% 65%;
+}
+
+/* Particle background animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes shine {
+  from { background-position: 200% center; }
+}
+
+.glass {
+  @apply backdrop-blur-md bg-white/10 border border-white/20;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg hover:shadow-primary/20;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-bg {
+  background: radial-gradient(circle at 20% top, hsl(var(--primary) / 0.2), transparent),
+              radial-gradient(circle at 80% bottom, hsl(var(--accent) / 0.2), transparent);
+}
+
+.animated-underline {
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary 
+  after:transition-all after:duration-300 hover:after:w-full;
+}
+
+.glow {
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+}
+
+.skill-bar {
+  @apply relative h-2 w-full bg-muted overflow-hidden rounded-full;
+}
+
+.skill-progress {
+  @apply absolute h-full bg-primary transition-all duration-1000 ease-out;
+  background: linear-gradient(90deg, 
+    hsl(var(--primary)), 
+    hsl(var(--secondary)),
+    hsl(var(--accent))
+  );
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full hover:bg-primary/70 transition-colors;
 }
 
 @layer base {

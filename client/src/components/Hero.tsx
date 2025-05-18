@@ -62,7 +62,7 @@ export default function Hero() {
             <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-white">Hi, I'm Prateek Budhwar</span>
             <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-blue-400">Data Engineer & AI Enthusiast</span>
           </motion.h1>
-          
+
           <motion.p 
             className="text-xl md:text-2xl mb-6 text-gray-300 font-light leading-relaxed max-w-4xl mx-auto"
             variants={itemVariants}
@@ -70,7 +70,7 @@ export default function Hero() {
             Transforming Earth Observation data into actionable insights through scalable pipelines and cloud-native applications.
           </motion.p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div 
             className="order-2 lg:order-1"
@@ -93,7 +93,7 @@ export default function Hero() {
                 <p className="text-sm text-gray-300">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
               </div>
             </motion.div>
-            
+
             <motion.div 
               className="flex flex-wrap gap-4"
               variants={itemVariants}
@@ -114,7 +114,7 @@ export default function Hero() {
                 View My Projects
               </Button>
             </motion.div>
-            
+
             <motion.div 
               className="mt-8 flex gap-4"
               variants={itemVariants}
@@ -139,7 +139,7 @@ export default function Hero() {
               </a>
             </motion.div>
           </motion.div>
-          
+
           <motion.div 
             className="order-1 lg:order-2 reveal flex flex-col gap-8"
             variants={containerVariants}
@@ -156,14 +156,14 @@ export default function Hero() {
                     className="rounded-full w-full h-auto aspect-square object-cover border-3 border-gray-800" 
                   />
                 </div>
-                
+
                 {/* Decorative elements */}
                 <div className="absolute -top-3 -right-3 w-8 h-8 bg-blue-500 rounded-full blur-xl opacity-70"></div>
                 <div className="absolute -bottom-3 -left-3 w-8 h-8 bg-purple-500 rounded-full blur-xl opacity-70"></div>
                 <div className="absolute top-1/2 -right-4 w-6 h-6 bg-cyan-500 rounded-full blur-lg opacity-70"></div>
               </div>
             </motion.div>
-            
+
             {/* AI Projects Section */}
             <motion.div 
               variants={itemVariants}
@@ -190,7 +190,7 @@ export default function Hero() {
                     View Project <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </div>
-                
+
                 <div className="bg-gray-800/60 rounded-lg p-4">
                   <h4 className="font-semibold text-white">Delhi Date Eats Guide</h4>
                   <p className="text-sm text-gray-300 mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
@@ -212,7 +212,7 @@ export default function Hero() {
                 </div>
               </div>
             </motion.div>
-            
+
             {/* Decorative background elements */}
             <div className="hidden lg:block absolute top-20 right-10 w-64 h-64 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl -z-10"></div>
             <div className="hidden lg:block absolute bottom-20 left-10 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 rounded-full blur-3xl -z-10"></div>
