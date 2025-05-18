@@ -164,6 +164,26 @@ export default function Hero() {
               <h3 className="text-xl font-bold text-blue-400 mb-3">AI Projects</h3>
               <div className="space-y-4">
                 <div>
+                  <h4 className="font-semibold text-white">Notion AI Template Forge</h4>
+                  <p className="text-sm text-gray-300 mb-2">AI-powered app generating custom Notion templates based on user interests and preferred styles.</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["React", "TypeScript", "Tailwind", "AI"].map((tech) => (
+                      <span key={tech} className="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded-full">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <a 
+                    href="https://github.com/budprat/notion-ai-template-forge"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center mt-3 text-sm text-blue-400 hover:text-blue-300"
+                  >
+                    View Project <ExternalLink className="ml-1 h-3 w-3" />
+                  </a>
+                </div>
+                
+                <div className="pt-3 border-t border-gray-700">
                   <h4 className="font-semibold text-white">Delhi Date Eats Guide</h4>
                   <p className="text-sm text-gray-300 mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
                   <div className="flex flex-wrap gap-2">
