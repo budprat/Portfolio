@@ -9,7 +9,7 @@ export default function Publications() {
       authors: "Jacob A, Vicente-Guijalba F, Claus M, Zellner PJ, Moral F, Budhwar P, Mougnaud P",
       event: "ESA Phi Week",
       year: "2020",
-      url: "https://eo4society.esa.int/phi-week/phi-week-2020/"
+      url: "https://bia.unibz.it/esploro/outputs/991006043940201241"
     },
     {
       title: "OpenEO - an API for Standardised Access to Big Earth Observation Data in a Landscape of a Growing Number of EO Cloud Providers",
