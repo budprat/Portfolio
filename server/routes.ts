@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { contactFormSchema } from "@shared/schema";
-import { fromZodError } from "zod-validation-error";
+import { ZodError } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission route
@@ -22,11 +22,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
 
     } catch (error) {
-      if (error instanceof Error) {
-        const validationError = fromZodError(error);
+      if (error instanceof ZodError) {
+        // ZodError is already properly formatted, so use it directly
         res.status(400).json({ 
           success: false, 
-          message: validationError.message || "Invalid form data" 
+          message: error.message || "Invalid form data" 
         });
       } else {
         res.status(500).json({ 
