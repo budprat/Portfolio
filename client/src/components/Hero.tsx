@@ -43,12 +43,12 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-gray-900">Hi, I'm Prateek Budhwar</span>
-              <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-primary">Data Engineer & AI Enthusiast</span>
+              <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-foreground bg-clip-text">Hi, I'm Prateek Budhwar</span>
+              <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-blue-500 to-purple-500">Data Engineer & AI Enthusiast</span>
             </motion.h1>
 
             <motion.p 
-              className="text-xl md:text-2xl mb-6 text-gray-700 font-light leading-relaxed"
+              className="text-xl md:text-2xl mb-6 text-muted-foreground font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -62,15 +62,15 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="flex-shrink-0 p-2 bg-amber-100 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-600">
+              <div className="flex-shrink-0 p-2 bg-amber-900/20 rounded-full border border-amber-500/30">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-500">
                   <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
                   <path d="M15.6 10a4 4 0 1 1-8 2.4"></path>
                 </svg>
               </div>
               <div>
-                <h4 className="font-semibold text-amber-600">Arctic Code Vault Contributor</h4>
-                <p className="text-sm text-gray-600">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
+                <h4 className="font-semibold text-amber-500">Arctic Code Vault Contributor</h4>
+                <p className="text-sm text-muted-foreground">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
               </div>
             </motion.div>
           
