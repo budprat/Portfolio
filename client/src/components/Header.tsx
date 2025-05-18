@@ -55,13 +55,13 @@ export default function Header() {
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'backdrop-blur-sm bg-background/90 border-b border-slate-800/50' : 'bg-transparent'
+      isScrolled ? 'backdrop-blur-sm bg-white/90 shadow-sm' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <a 
           onClick={() => scrollToSection('home')}
-          className="text-2xl font-bold font-heading text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-blue-500 flex items-center gap-2 cursor-pointer"
+          className="text-2xl font-bold font-heading text-primary flex items-center gap-2 cursor-pointer"
         >
           <span>Prateek</span>
         </a>
@@ -72,10 +72,8 @@ export default function Header() {
             <a
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`cursor-pointer transition-colors duration-200 ${
-                activeSection === item.id 
-                ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-500' 
-                : 'text-muted-foreground hover:text-blue-400'
+              className={`cursor-pointer hover:text-primary transition-colors duration-200 ${
+                activeSection === item.id ? 'text-primary' : 'text-gray-600'
               }`}
             >
               {item.label}

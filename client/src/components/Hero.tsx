@@ -43,12 +43,12 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-foreground bg-clip-text">Hi, I'm Prateek Budhwar</span>
-              <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 bg-clip-text text-transparent bg-gradient-to-r from-violet-500 via-blue-500 to-purple-500">Data Engineer & AI Enthusiast</span>
+              <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-gray-900">Hi, I'm Prateek Budhwar</span>
+              <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-primary">Data Engineer & AI Enthusiast</span>
             </motion.h1>
 
             <motion.p 
-              className="text-xl md:text-2xl mb-6 text-muted-foreground font-light leading-relaxed"
+              className="text-xl md:text-2xl mb-6 text-gray-700 font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -62,15 +62,15 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="flex-shrink-0 p-2 bg-amber-900/20 rounded-full border border-amber-500/30">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-500">
+              <div className="flex-shrink-0 p-2 bg-amber-100 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-600">
                   <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
                   <path d="M15.6 10a4 4 0 1 1-8 2.4"></path>
                 </svg>
               </div>
               <div>
-                <h4 className="font-semibold text-amber-500">Arctic Code Vault Contributor</h4>
-                <p className="text-sm text-muted-foreground">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
+                <h4 className="font-semibold text-amber-600">Arctic Code Vault Contributor</h4>
+                <p className="text-sm text-gray-600">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
               </div>
             </motion.div>
           
@@ -86,13 +86,13 @@ export default function Hero() {
                 className="px-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] group"
               >
                 <span className="relative z-10">Get in Touch</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-violet-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
                 onClick={() => scrollToSection('projects')}
-                className="px-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20 hover:translate-y-[-2px] hover:border-blue-500 hover:text-blue-500"
+                className="px-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] hover:border-primary"
               >
                 View My Projects
               </Button>
@@ -108,7 +108,7 @@ export default function Hero() {
                 href="https://github.com/budprat" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-muted-foreground hover:text-blue-500 text-xl transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-blue-500 after:to-violet-500 after:transition-all after:duration-300 hover:after:w-full"
+                className="text-gray-600 hover:text-primary text-xl transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                 aria-label="GitHub Profile"
               >
                 <Github className="h-6 w-6" />
@@ -117,7 +117,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/prateek-budhwar-212a92314/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-muted-foreground hover:text-blue-500 text-xl transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-blue-500 after:to-violet-500 after:transition-all after:duration-300 hover:after:w-full"
+                className="text-gray-600 hover:text-primary text-xl transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="h-6 w-6" />

@@ -3,27 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --background: 222 47% 11%; /* Deep navy blue #0F172A */
-  --foreground: 210 40% 98%; /* Crisp white #F8FAFC */
-  --muted: 217 33% 17%; /* Slightly lighter navy #1E293B */
-  --muted-foreground: 210 20% 82%; /* Soft silver-blue #CBD5E1 */
-  --popover: 222 47% 11%;
-  --popover-foreground: 210 40% 98%;
-  --card: 222 47% 11%;
-  --card-foreground: 210 40% 98%;
-  --border: 217 33% 25%;
-  --input: 217 33% 25%;
-  --primary: 263 70% 58%; /* Vibrant purple #7C3AED */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --primary: 263 85% 50%;
   --primary-foreground: 210 40% 98%;
-  --secondary: 221 83% 60%; /* Electric blue #3B82F6 */
-  --secondary-foreground: 210 40% 98%;
-  --accent: 316 70% 60%; /* Cosmic pink #EC4899 */
-  --accent-foreground: 210 40% 98%;
+  --secondary: 221 90% 65%;
+  --secondary-foreground: 222 47% 11%;
+  --accent: 316 80% 60%;
+  --accent-foreground: 222 47% 11%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
-  --ring: 263 70% 58%;
+  --ring: 263 85% 50%;
   --radius: 0.75rem;
-  --tertiary: 35 100% 50%; /* Subtle gold #F59E0B */
 }
 
 /* Particle background animation */
@@ -120,9 +119,9 @@
 
   body {
     @apply font-sans antialiased text-foreground tracking-tight;
-    background: linear-gradient(135deg, #0F172A, #1E1B4B),
-                radial-gradient(circle at top left, hsl(var(--primary) / 0.2), transparent 50%),
-                radial-gradient(circle at bottom right, hsl(var(--accent) / 0.2), transparent 50%);
+    background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--background) / 0.9)),
+                radial-gradient(circle at top left, hsl(var(--primary) / 0.15), transparent 50%),
+                radial-gradient(circle at bottom right, hsl(var(--accent) / 0.15), transparent 50%);
     background-attachment: fixed;
   }
 
