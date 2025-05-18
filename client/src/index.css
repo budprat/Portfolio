@@ -3,33 +3,41 @@
 @tailwind utilities;
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --primary: 263 85% 50%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 221 90% 65%;
-  --secondary-foreground: 222 47% 11%;
-  --accent: 316 80% 60%;
-  --accent-foreground: 222 47% 11%;
+  /* New color palette */
+  --background: 43 53% 95%; /* Warm off-white (#F8F4EA) */
+  --foreground: 210 10% 23%; /* Dark text for readability */
+  --muted: 40 30% 84%; /* Soft sand (#E6DDC6) */
+  --muted-foreground: 210 9% 31%;
+  --popover: 43 53% 95%;
+  --popover-foreground: 210 10% 23%;
+  --card: 43 53% 95%;
+  --card-foreground: 210 10% 23%;
+  --border: 40 30% 84%;
+  --input: 40 30% 84%;
+  --primary: 10 40% 56%; /* Terracotta (#C17A5E) */
+  --primary-foreground: 43 53% 95%;
+  --secondary: 110 10% 50%; /* Sage green (#7D8C75) */
+  --secondary-foreground: 43 53% 95%;
+  --accent: 200 10% 63%; /* Dusty blue (#94A7AE) */
+  --accent-foreground: 210 10% 23%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
-  --ring: 263 85% 50%;
-  --radius: 0.75rem;
+  --ring: 10 40% 56%;
+  --radius: 0.5rem;
 }
 
 /* Particle background animation */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes sway {
+  0% { transform: rotate(0deg) translateX(0px); }
+  25% { transform: rotate(1deg) translateX(2px); }
+  75% { transform: rotate(-1deg) translateX(-2px); }
+  100% { transform: rotate(0deg) translateX(0px); }
 }
 
 @keyframes shine {
@@ -37,28 +45,33 @@
 }
 
 .glass {
-  @apply backdrop-blur-md bg-white/10 border border-white/20;
+  @apply backdrop-blur-sm bg-background/60 border border-muted/60;
 }
 
 .card-hover {
-  @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg hover:shadow-primary/20;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  @apply transition-all duration-500 hover:translate-y-[-4px] hover:shadow-md;
+  background: rgba(248, 244, 234, 0.6);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(230, 221, 198, 0.5);
+  transform-origin: center bottom;
+}
+
+.card-hover:hover {
+  animation: sway 4s ease-in-out infinite;
 }
 
 .gradient-bg {
-  background: radial-gradient(circle at 20% top, hsl(var(--primary) / 0.2), transparent),
-              radial-gradient(circle at 80% bottom, hsl(var(--accent) / 0.2), transparent);
+  background: radial-gradient(circle at 20% top, hsl(var(--primary) / 0.07), transparent 60%),
+              radial-gradient(circle at 80% bottom, hsl(var(--secondary) / 0.07), transparent 60%);
 }
 
 .animated-underline {
-  @apply relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary 
-  after:transition-all after:duration-300 hover:after:w-full;
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary 
+  after:transition-all after:duration-500 hover:after:w-full;
 }
 
 .glow {
-  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  box-shadow: 0 4px 16px hsl(var(--primary) / 0.15);
 }
 
 .skill-bar {
@@ -66,19 +79,19 @@
 }
 
 .skill-progress {
-  @apply absolute h-full bg-primary transition-all duration-1000 ease-out;
+  @apply absolute h-full transition-all duration-1000 ease-in-out;
   background: linear-gradient(90deg, 
     hsl(var(--primary)), 
     hsl(var(--secondary)),
     hsl(var(--accent))
   );
   background-size: 200% auto;
-  animation: shine 3s linear infinite;
+  animation: shine 6s ease-in-out infinite;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -86,7 +99,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary/50 rounded-full hover:bg-primary/70 transition-colors;
+  @apply bg-primary/40 rounded-full hover:bg-primary/60 transition-colors;
 }
 
 @layer base {
@@ -118,10 +131,11 @@
   }
 
   body {
-    @apply font-sans antialiased text-foreground tracking-tight;
-    background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--background) / 0.9)),
-                radial-gradient(circle at top left, hsl(var(--primary) / 0.15), transparent 50%),
-                radial-gradient(circle at bottom right, hsl(var(--accent) / 0.15), transparent 50%);
+    @apply font-serif antialiased text-foreground tracking-normal;
+    background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--background) / 0.98)),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C17A5E' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+                radial-gradient(circle at top left, hsl(var(--primary) / 0.08), transparent 40%),
+                radial-gradient(circle at bottom right, hsl(var(--secondary) / 0.08), transparent 40%);
     background-attachment: fixed;
   }
 
@@ -130,15 +144,19 @@
   }
 
   .card-hover {
-    @apply bg-background/50 backdrop-blur-md border-primary/20;
+    @apply bg-background/60 backdrop-blur-sm border border-muted shadow-sm;
   }
 
   .project-card {
-    @apply bg-background/50 backdrop-blur-md;
+    @apply bg-background/60 backdrop-blur-sm border border-muted shadow-sm;
   }
 
   h1, h2, h3, h4 {
-    @apply font-bold tracking-tighter;
+    @apply font-serif font-medium tracking-tight;
+  }
+  
+  p {
+    @apply font-sans leading-relaxed;
   }
 
   .container {
@@ -147,8 +165,8 @@
 }
 
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-purple-500 to-indigo-400 dark:from-violet-300 dark:via-purple-400 dark:to-indigo-300 font-bold;
-  text-shadow: 0 0 30px rgba(139, 92, 246, 0.15);
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent font-bold;
+  text-shadow: 0 0 15px rgba(193, 122, 94, 0.15);
 }
 
 .card-hover {
