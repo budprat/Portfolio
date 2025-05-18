@@ -133,26 +133,57 @@ export default function Hero() {
           </motion.div>
           
           <motion.div 
-            className="order-1 lg:order-2 reveal"
-            variants={imageVariants}
+            className="order-1 lg:order-2 reveal flex flex-col gap-8"
+            variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            <div className="relative max-w-[250px] mx-auto lg:mx-0">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-70"></div>
-              <div className="relative bg-gray-900 rounded-full p-1.5">
-                <img 
-                  src={profileImage} 
-                  alt="Prateek Budhwar profile picture" 
-                  className="rounded-full w-full h-auto aspect-square object-cover border-3 border-gray-800" 
-                />
+            <motion.div variants={imageVariants}>
+              <div className="relative max-w-[250px] mx-auto lg:mx-0">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-70"></div>
+                <div className="relative bg-gray-900 rounded-full p-1.5">
+                  <img 
+                    src={profileImage} 
+                    alt="Prateek Budhwar profile picture" 
+                    className="rounded-full w-full h-auto aspect-square object-cover border-3 border-gray-800" 
+                  />
+                </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-3 -right-3 w-8 h-8 bg-blue-500 rounded-full blur-xl opacity-70"></div>
+                <div className="absolute -bottom-3 -left-3 w-8 h-8 bg-purple-500 rounded-full blur-xl opacity-70"></div>
+                <div className="absolute top-1/2 -right-4 w-6 h-6 bg-cyan-500 rounded-full blur-lg opacity-70"></div>
               </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-3 -right-3 w-8 h-8 bg-blue-500 rounded-full blur-xl opacity-70"></div>
-              <div className="absolute -bottom-3 -left-3 w-8 h-8 bg-purple-500 rounded-full blur-xl opacity-70"></div>
-              <div className="absolute top-1/2 -right-4 w-6 h-6 bg-cyan-500 rounded-full blur-lg opacity-70"></div>
-            </div>
+            </motion.div>
+            
+            {/* AI Projects Section */}
+            <motion.div 
+              variants={itemVariants}
+              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-5 mx-auto lg:mx-0 max-w-sm"
+            >
+              <h3 className="text-xl font-bold text-blue-400 mb-3">AI Projects</h3>
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-white">Delhi Date Eats Guide</h4>
+                  <p className="text-sm text-gray-300 mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["React", "JavaScript", "CSS"].map((tech) => (
+                      <span key={tech} className="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded-full">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <a 
+                    href="https://github.com/budprat/delhi-date-eats-guide"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center mt-3 text-sm text-blue-400 hover:text-blue-300"
+                  >
+                    View Project <ExternalLink className="ml-1 h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
             
             {/* Decorative background elements */}
             <div className="hidden lg:block absolute top-20 right-10 w-64 h-64 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl -z-10"></div>
