@@ -6,6 +6,18 @@ import { Check, ExternalLink } from "lucide-react";
 export default function Projects() {
   const projects = [
     {
+      title: "AI-Powered Knowledge Assistant",
+      period: "2024-2025",
+      description: "Advanced conversational AI system that leverages large language models to provide intelligent information retrieval and answers.",
+      achievements: [
+        "Developed sophisticated natural language processing pipeline for enhanced understanding",
+        "Implemented semantic search capabilities for accurate information retrieval"
+      ],
+      technologies: ["React", "TypeScript", "Node.js", "GPT-4", "Vector Database", "Natural Language Processing"],
+      imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+      projectUrl: "https://6b3b849b-dd07-4106-925a-f6f5e9c55f2e-00-2p5b1ten8f8we.worf.replit.dev/"
+    },
+    {
       title: "Terrabyte HPDA Platform",
       period: "2021-2023",
       description: "High-performance distributed computing framework for processing satellite data, funded by the German Government.",
