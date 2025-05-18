@@ -1,9 +1,18 @@
 import { motion } from "framer-motion";
-import { BookOpen, ExternalLink, Youtube } from "lucide-react";
+import { BookOpen, ExternalLink, Video } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 
+interface Publication {
+  title: string;
+  authors: string;
+  event: string;
+  year: string;
+  url: string;
+  videoUrl?: string;
+}
+
 export default function Publications() {
-  const publications = [
+  const publications: Publication[] = [
     {
       title: "SAR2CUBE: A Data Cube Concept for Providing Both Interferometric and Intensity Based Products through an Open Source Framework",
       authors: "Jacob A, Vicente-Guijalba F, Claus M, Zellner PJ, Moral F, Budhwar P, Mougnaud P",
@@ -75,14 +84,14 @@ export default function Publications() {
                       </div>
                       
                       <div className="flex items-center space-x-4">
-                        {'videoUrl' in publication && (
+                        {publication.videoUrl && (
                           <a 
-                            href={publication.videoUrl as string} 
+                            href={publication.videoUrl} 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="inline-flex items-center text-red-500 hover:text-red-600 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
                           >
-                            Watch Video <Youtube className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                            Watch Video <Video className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                           </a>
                         )}
                         
