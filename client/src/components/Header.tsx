@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, Sun, Moon } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useTheme } from "next-themes";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,8 +15,8 @@ export default function Header() {
       // Update active section
       const sections = document.querySelectorAll('section[id]');
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
+        const sectionTop = (section as HTMLElement).offsetTop - 100;
+        const sectionHeight = (section as HTMLElement).offsetHeight;
         const id = section.getAttribute('id') || '';
 
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
@@ -39,7 +37,7 @@ export default function Header() {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 80,
+        top: (element as HTMLElement).offsetTop - 80,
         behavior: 'smooth'
       });
     }
@@ -58,13 +56,13 @@ export default function Header() {
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'backdrop-blur-sm bg-gray-900/80 shadow-sm' : 'bg-transparent'
+      isScrolled ? 'backdrop-blur-sm bg-white/90 shadow-sm' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <a 
           onClick={() => scrollToSection('home')}
-          className="text-2xl font-bold font-heading text-primary-foreground flex items-center gap-2 cursor-pointer"
+          className="text-2xl font-bold font-heading text-primary flex items-center gap-2 cursor-pointer"
         >
           <span className="i-lucide-code" />
           <span>Prateek</span>
@@ -76,36 +74,16 @@ export default function Header() {
             <a
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`cursor-pointer hover:text-primary-foreground transition-colors duration-200 ${
-                activeSection === item.id ? 'text-primary-foreground' : 'text-gray-400'
+              className={`cursor-pointer hover:text-primary transition-colors duration-200 ${
+                activeSection === item.id ? 'text-primary' : 'text-gray-600'
               }`}
             >
               {item.label}
             </a>
           ))}
         </nav>
-        
-        <div className="flex items-center gap-4">
-          <ThemeToggle />
-        </div>
       </div>
     </header>
   );
 }
 
-const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
-
-  return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="rounded-full"
-    >
-      <Sun className="h-5 w-5 rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
-  );
-};
