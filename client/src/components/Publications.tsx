@@ -26,7 +26,7 @@ export default function Publications() {
       authors: "Jacob A, Pebesma E, Neteler M, Wagner W, Verbesselt J, Mohr M, Dries J, Monsorno R, Budhwar P, Briese C, Mistelbauer T, Schramm M, Kadunc",
       event: "ESA Living Planet Symposium (Milan)",
       year: "2019",
-      url: "https://lps19.esa.int/"
+      url: "https://repositum.tuwien.at/handle/20.500.12708/83784"
     }
   ];
 
