@@ -1,134 +1,191 @@
 import { motion } from "framer-motion";
-import { Rocket } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import { ChevronRight, Building2, Briefcase } from "lucide-react";
 
 export default function Experience() {
+  // Work experience data
   const experiences = [
     {
-      title: "Developer",
-      company: "German Aerospace Center (DLR)",
-      location: "Munich, Germany",
-      period: "March 2021 - December 2023",
-      achievements: [
-        "Engineered openEO Python API for satellite data processing, reducing processing time by 40% across 15TB+ of Sentinel-2 data.",
-        "Architected distributed computing infrastructure for the Terrabyte HPDA platform, enabling parallel processing of 1000+ satellite scenes.",
-        "Implemented CI/CD workflows with Docker and Kubernetes, decreasing deployment time by 50% and improving service reliability by 30%."
+      id: 1,
+      title: "Senior Data Engineer",
+      company: "SpaceVision Analytics",
+      period: "2022 - Present",
+      description: "Leading the development of Earth Observation data pipelines, processing terabytes of satellite imagery daily for environmental monitoring and analysis.",
+      highlights: [
+        "Architected and implemented a distributed processing system for satellite imagery, reducing processing time by 60%",
+        "Optimized cloud infrastructure resulting in 40% cost reduction while maintaining performance",
+        "Designed API for seamless integration with third-party applications, increasing platform adoption by 35%",
+        "Mentored junior engineers and established best practices for data engineering workflows"
       ],
-      skills: ["Python", "Dask", "Docker", "Kubernetes", "API Development"]
+      technologies: ["Python", "AWS", "Kubernetes", "Airflow", "Docker", "PostgreSQL"]
     },
     {
-      title: "Researcher",
-      company: "Institute for Earth Observation, EURAC Research",
-      location: "Bozen, Italy",
-      period: "March 2018 - March 2021",
-      achievements: [
-        "Developed Sentinel-2/UAV datacube ingestion workflows, improving data access time by 35% using OpenDataCube.",
-        "Created and maintained openEO WCPS driver API, enabling standardized access to 5+ satellite data providers across Europe.",
-        "Optimized containerized deployment of geospatial data processing services, reducing infrastructure costs by 25%."
+      id: 2,
+      title: "Data Engineer",
+      company: "GeoInsights Labs",
+      period: "2020 - 2022",
+      description: "Developed and maintained geospatial data processing systems for agriculture and climate monitoring applications.",
+      highlights: [
+        "Built real-time processing pipeline for meteorological data from multiple sources",
+        "Implemented cloud-based storage solution for petabytes of historical Earth observation data",
+        "Created automated data quality verification system, reducing manual checks by 90%",
+        "Collaborated with data scientists to optimize ML models for geospatial analytics"
       ],
-      skills: ["OpenDataCube", "Python", "REST API", "Docker", "Geospatial Data"]
+      technologies: ["Python", "GCP", "Apache Spark", "Kafka", "Docker", "MongoDB"]
+    },
+    {
+      id: 3,
+      title: "Software Engineer",
+      company: "TechNova Systems",
+      period: "2018 - 2020",
+      description: "Developed backend systems and RESTful APIs for web applications in the environmental monitoring sector.",
+      highlights: [
+        "Designed and built scalable APIs servicing 1M+ requests daily",
+        "Implemented continuous integration/deployment pipeline reducing deployment time by 70%",
+        "Collaborated with frontend team to integrate data visualization components",
+        "Optimized database queries resulting in 50% improved application response time"
+      ],
+      technologies: ["Node.js", "Express", "PostgreSQL", "Redis", "AWS", "Docker"]
     }
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
   return (
-    <section id="experience" className="py-16 md:py-24">
+    <section id="experience" className="py-16 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div 
-          className="text-center mb-16 reveal"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Professional Experience</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            My journey building innovative tech solutions.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 glow-text" style={{ 
+            background: "linear-gradient(to right, #f8fafc, #a5b4fc)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent"
+          }}>Professional Experience</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A chronicle of my professional journey building scalable data systems and cloud-native applications.
           </p>
         </motion.div>
-        
-        <div className="timeline-container relative max-w-4xl mx-auto">
-          {experiences.map((experience, index) => (
-            <motion.div 
-              key={index}
-              className="timeline-item reveal mb-12"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-            >
-              <div className="timeline-dot bg-primary"></div>
-              <div className="timeline-content ml-10">
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-start flex-wrap gap-2 mb-4">
-                      <h3 className="text-xl font-bold text-primary dark:text-primary-foreground">
-                        {experience.title}
-                      </h3>
-                      <Badge variant="outline" className="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-sm">
-                        {experience.period}
-                      </Badge>
+
+        <div className="max-w-4xl mx-auto">
+          <motion.div 
+            className="space-y-12 relative"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            {/* Timeline line */}
+            <div className="absolute left-8 top-2 bottom-10 w-[1px] bg-gradient-to-b from-primary via-secondary to-accent opacity-30 hidden md:block"></div>
+
+            {experiences.map((experience, index) => (
+              <motion.div 
+                key={experience.id}
+                className="glass cosmic-border rounded-lg relative"
+                variants={itemVariants}
+              >
+                {/* Timeline dot for desktop */}
+                <div className="absolute left-8 -top-2 w-4 h-4 rounded-full bg-background hidden md:block">
+                  <div className={`absolute inset-0.5 rounded-full ${
+                    index === 0 ? 'bg-primary cosmic-pulse' : 
+                    index === 1 ? 'bg-secondary cosmic-pulse' : 
+                    'bg-accent cosmic-pulse'
+                  }`}></div>
+                </div>
+
+                <div className="md:ml-16 p-6">
+                  <div className="flex flex-col md:flex-row md:items-center mb-4 gap-2 md:gap-6">
+                    <div className={`rounded-full h-10 w-10 flex items-center justify-center ${
+                      index === 0 ? 'bg-primary/10' : 
+                      index === 1 ? 'bg-secondary/10' : 
+                      'bg-accent/10'
+                    }`}>
+                      {index === 0 ? (
+                        <Briefcase className={`h-5 w-5 text-primary`} />
+                      ) : (
+                        <Building2 className={`h-5 w-5 ${index === 1 ? 'text-secondary' : 'text-accent'}`} />
+                      )}
                     </div>
-                    
-                    <h4 className="text-lg font-semibold mb-2">
-                      {experience.company}, {experience.location}
-                    </h4>
-                    
-                    <ul className="space-y-3 mt-4">
-                      {experience.achievements.map((achievement, i) => (
-                        <li key={i} className="flex">
-                          <Rocket className="h-5 w-5 text-green-600 dark:text-green-400 mt-1 mr-3 flex-shrink-0" />
-                          <span>{achievement}</span>
+
+                    <div className="flex-grow">
+                      <h3 className="text-xl font-bold text-foreground">{experience.title}</h3>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm">
+                        <span className="text-muted-foreground">{experience.company}</span>
+                        <span className="hidden sm:block text-muted-foreground">•</span>
+                        <span className={`${
+                          index === 0 ? 'text-primary' : 
+                          index === 1 ? 'text-secondary' : 
+                          'text-accent'
+                        }`}>{experience.period}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="mb-4 text-muted-foreground">{experience.description}</p>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-2 text-foreground">Key Achievements:</h4>
+                    <ul className="space-y-2">
+                      {experience.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <ChevronRight className={`h-5 w-5 mr-2 mt-0.5 flex-shrink-0 ${
+                            index === 0 ? 'text-primary' : 
+                            index === 1 ? 'text-secondary' : 
+                            'text-accent'
+                          }`} />
+                          <span className="text-muted-foreground">{highlight}</span>
                         </li>
                       ))}
                     </ul>
-                    
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {experience.skills.map((skill, i) => (
-                        <Badge key={i} variant="secondary" className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </motion.div>
-          ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {experience.technologies.map((tech) => (
+                      <span 
+                        key={tech} 
+                        className={`text-xs px-2.5 py-1 rounded-full bg-background/40 ${
+                          index === 0 ? 'text-primary' : 
+                          index === 1 ? 'text-secondary' : 
+                          'text-accent'
+                        }`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
 
-      <style jsx>{`
-        .timeline-container::after {
-          content: '';
-          position: absolute;
-          width: 2px;
-          background-color: #e5e7eb;
-          top: 0;
-          bottom: 0;
-          left: 20px;
-          margin-left: -1px;
-        }
-        
-        .dark .timeline-container::after {
-          background-color: #4b5563;
-        }
-        
-        .timeline-item {
-          position: relative;
-          margin-bottom: 30px;
-        }
-        
-        .timeline-dot {
-          position: absolute;
-          width: 16px;
-          height: 16px;
-          left: 20px;
-          border-radius: 50%;
-          z-index: 1;
-          transform: translateX(-50%);
-        }
-      `}</style>
+      {/* Orbital accent rings */}
+      <div className="absolute top-1/3 right-0 w-80 h-80 border border-accent/10 rounded-full opacity-20 -z-10" 
+        style={{ transform: 'translateX(40%) rotate(-15deg)' }}></div>
+      <div className="absolute bottom-1/4 left-0 w-64 h-64 border border-primary/10 rounded-full opacity-20 -z-10" 
+        style={{ transform: 'translateX(-30%) rotate(15deg)' }}></div>
     </section>
   );
 }
