@@ -32,10 +32,10 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="bg-slate-50 py-16 md:py-24">
+    <section id="projects" className="bg-slate-50 py-8 md:py-12">
       <div className="container mx-auto px-4">
         <motion.div 
-          className="text-center mb-16 reveal"
+          className="text-center mb-8 reveal"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -47,7 +47,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <motion.div 
               key={index}
@@ -56,13 +56,17 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileHover={{ 
+                y: -5,
+                transition: { duration: 0.2 }
+              }}
             >
-              <Card className="overflow-hidden h-full bg-white shadow-sm project-card">
-                <div className="relative">
+              <Card className="overflow-hidden h-full bg-white shadow-sm hover:shadow-lg transition-all duration-300 group">
+                <div className="relative overflow-hidden">
                   <img 
                     src={project.imageUrl} 
                     alt={project.title} 
-                    className="w-full h-64 object-cover" 
+                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105" 
                   />
                   <div className="absolute top-4 right-4">
                     <Badge className="bg-primary text-white">
@@ -72,19 +76,19 @@ export default function Projects() {
                 </div>
 
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
                   <p className="text-gray-600 mb-4">
                     {project.description}
                   </p>
 
-                  <div className="mb-4">
+                  <div className="mb-4 transform transition-all duration-300 group-hover:translate-y-[-2px]">
                     <h4 className="font-semibold mb-2 text-primary">
                       Key Achievements:
                     </h4>
                     <ul className="space-y-2 mb-4">
                       {project.achievements.map((achievement, i) => (
                         <li key={i} className="flex">
-                          <Check className="h-5 w-5 text-green-600 mt-1 mr-2 flex-shrink-0" />
+                          <Check className="h-5 w-5 text-green-600 mt-1 mr-2 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
                           <span>{achievement}</span>
                         </li>
                       ))}
@@ -93,7 +97,11 @@ export default function Projects() {
 
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, i) => (
-                      <Badge key={i} variant="outline" className="bg-gray-100 text-gray-700">
+                      <Badge 
+                        key={i} 
+                        variant="outline" 
+                        className="bg-gray-100 text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors duration-300 cursor-pointer"
+                      >
                         {tech}
                       </Badge>
                     ))}
@@ -105,9 +113,9 @@ export default function Projects() {
                     href={project.projectUrl} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="inline-flex items-center text-primary hover:underline"
+                    className="inline-flex items-center text-primary group-hover:text-primary/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full"
                   >
-                    View Project <ExternalLink className="ml-1 h-4 w-4" />
+                    View Project <ExternalLink className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </a>
                 </CardFooter>
               </Card>
