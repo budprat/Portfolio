@@ -63,6 +63,8 @@ export default function Home() {
         <Projects />
         <Education />
         <Publications />
+        <Testimonial />
+        <Contact />
       </main>
       <Footer />
     </div>
