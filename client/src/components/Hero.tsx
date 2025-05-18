@@ -179,19 +179,19 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <h3 className="text-xl font-bold text-primary mb-4">AI Projects</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 <div className="bg-slate-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 hover:translate-y-[-2px]">
-                  <h4 className="font-semibold text-gray-900">Notion AI Template Forge</h4>
-                  <p className="text-sm text-gray-600 mb-2">AI-powered app generating custom Notion templates based on user interests and preferred styles.</p>
+                  <h4 className="font-semibold text-gray-900">AI Knowledge Assistant</h4>
+                  <p className="text-sm text-gray-600 mb-2">Advanced conversational AI system that provides intelligent answers and information retrieval capabilities.</p>
                   <div className="flex flex-wrap gap-2 mb-3">
-                    {["React", "TypeScript", "Tailwind", "AI"].map((tech) => (
+                    {["React", "TypeScript", "GPT-4", "NLP"].map((tech) => (
                       <span key={tech} className="text-xs px-2 py-1 bg-slate-100 text-gray-700 rounded-full">
                         {tech}
                       </span>
                     ))}
                   </div>
                   <a 
-                    href="https://github.com/budprat/notion-ai-template-forge"
+                    href="https://6b3b849b-dd07-4106-925a-f6f5e9c55f2e-00-2p5b1ten8f8we.worf.replit.dev/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-primary hover:text-primary/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
@@ -199,25 +199,47 @@ export default function Hero() {
                     View Project <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </div>
-
-                <div className="bg-slate-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 hover:translate-y-[-2px]">
-                  <h4 className="font-semibold text-gray-900">Delhi Date Eats Guide</h4>
-                  <p className="text-sm text-gray-600 mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {["React", "JavaScript", "CSS"].map((tech) => (
-                      <span key={tech} className="text-xs px-2 py-1 bg-slate-100 text-gray-700 rounded-full">
-                        {tech}
-                      </span>
-                    ))}
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-slate-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 hover:translate-y-[-2px]">
+                    <h4 className="font-semibold text-gray-900">Notion AI Template Forge</h4>
+                    <p className="text-sm text-gray-600 mb-2">AI-powered app generating custom Notion templates based on user interests and preferred styles.</p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {["React", "TypeScript", "Tailwind", "AI"].map((tech) => (
+                        <span key={tech} className="text-xs px-2 py-1 bg-slate-100 text-gray-700 rounded-full">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <a 
+                      href="https://github.com/budprat/notion-ai-template-forge"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-primary hover:text-primary/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                    >
+                      View Project <ExternalLink className="ml-1 h-3 w-3" />
+                    </a>
                   </div>
-                  <a 
-                    href="https://github.com/budprat/delhi-date-eats-guide"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-primary hover:text-primary/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                  >
-                    View Project <ExternalLink className="ml-1 h-3 w-3" />
-                  </a>
+
+                  <div className="bg-slate-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 hover:translate-y-[-2px]">
+                    <h4 className="font-semibold text-gray-900">Delhi Date Eats Guide</h4>
+                    <p className="text-sm text-gray-600 mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {["React", "JavaScript", "CSS"].map((tech) => (
+                        <span key={tech} className="text-xs px-2 py-1 bg-slate-100 text-gray-700 rounded-full">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <a 
+                      href="https://github.com/budprat/delhi-date-eats-guide"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-primary hover:text-primary/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                    >
+                      View Project <ExternalLink className="ml-1 h-3 w-3" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </motion.div>
