@@ -1,4 +1,6 @@
-import { users, type User, type InsertUser } from "@shared/schema";
+import { users, contactForms, type User, type InsertUser, type ContactForm, type InsertContactForm } from "@shared/schema";
+import { db } from "./database";
+import { eq } from "drizzle-orm";
 
 // modify the interface with any CRUD methods
 // you might need
@@ -7,6 +9,9 @@ export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
+  createContactForm(form: InsertContactForm): Promise<ContactForm>;
+  getContactForms(): Promise<ContactForm[]>;
+  getContactFormById(id: number): Promise<ContactForm | undefined>;
 }
 
 export class MemStorage implements IStorage {
