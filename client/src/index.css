@@ -3,26 +3,26 @@
 @tailwind utilities;
 
 :root {
-  /* Modern tech-inspired gradient theme - directly applied for all modes */
-  --background: 222 40% 11%; /* Deep navy (#0A192F) */
-  --foreground: 240 100% 99%; /* Off-white text (#F8F8FF) */
-  --muted: 222 30% 20%; /* Darker navy for muted areas */
-  --muted-foreground: 195 40% 70%; /* Light blue (#8ABCD1) */
-  --popover: 222 40% 11%; 
-  --popover-foreground: 240 100% 99%;
-  --card: 222 40% 13%; /* Slightly lighter than background */
-  --card-foreground: 240 100% 99%;
-  --border: 222 30% 25%; /* Subtle border color */
-  --input: 222 30% 18%;
-  --primary: 174 58% 55%; /* Teal (#4ECDC4) */
+  /* Purple aesthetic theme - directly applied for all modes */
+  --background: 270 40% 8%; /* Deep purple-black (#15101E) */
+  --foreground: 240 30% 98%; /* Off-white text with slight purple tint */
+  --muted: 270 35% 15%; /* Darker purple for muted areas */
+  --muted-foreground: 270 25% 75%; /* Light purple */
+  --popover: 270 40% 8%; 
+  --popover-foreground: 240 30% 98%;
+  --card: 270 40% 10%; /* Slightly lighter than background */
+  --card-foreground: 240 30% 98%;
+  --border: 270 30% 20%; /* Subtle border color */
+  --input: 270 30% 15%;
+  --primary: 280 75% 65%; /* Vibrant purple (#B24BF3) */
   --primary-foreground: 0 0% 100%;
-  --secondary: 262 40% 37%; /* Rich purple (#44318D) */
+  --secondary: 255 70% 60%; /* Rich violet-blue (#7C5CE0) */
   --secondary-foreground: 0 0% 100%;
-  --accent: 199 40% 60%; /* Medium blue accent */
+  --accent: 300 70% 65%; /* Magenta accent (#E16AE0) */
   --accent-foreground: 0 0% 100%;
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
-  --ring: 174 58% 55%;
+  --ring: 280 75% 65%;
   --radius: 0.5rem;
 }
 
@@ -137,16 +137,16 @@
     font-family: 'Inter', sans-serif;
     letter-spacing: 0.01em;
     background: 
-      linear-gradient(135deg, hsl(222 40% 11%), hsl(262 40% 20%), hsl(262 40% 25%)),
-      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234ECDC4' fill-opacity='0.07'%3E%3Cpath d='M50 50.38L30.14 75.7 30 25.34l40.18 25.02L50 50.38z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-      linear-gradient(to right, hsl(var(--primary) / 0.05), transparent),
-      radial-gradient(circle at 20% bottom, hsl(var(--primary) / 0.15), transparent 50%),
-      radial-gradient(circle at 80% top, hsl(var(--secondary) / 0.1), transparent 50%);
+      linear-gradient(135deg, hsl(280 40% 12%), hsl(270 45% 18%), hsl(260 50% 25%)),
+      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B24BF3' fill-opacity='0.07'%3E%3Cpath d='M50 50.38L30.14 75.7 30 25.34l40.18 25.02L50 50.38z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+      linear-gradient(to right, hsl(var(--primary) / 0.08), transparent),
+      radial-gradient(circle at 20% bottom, hsl(var(--primary) / 0.2), transparent 60%),
+      radial-gradient(circle at 80% top, hsl(var(--accent) / 0.15), transparent 60%);
     background-attachment: fixed;
     position: relative;
   }
   
-  /* Subtle cosmic dust effect */
+  /* Ethereal cosmic dust effect - enhanced for purple theme */
   body::before {
     content: "";
     position: fixed;
@@ -155,14 +155,23 @@
     width: 100%;
     height: 100%;
     background-image: 
-      radial-gradient(2px 2px at calc(50% + 20px) calc(50% - 200px), hsl(var(--primary) / 0.3), transparent),
-      radial-gradient(2px 2px at calc(50% - 300px) calc(50% + 150px), hsl(var(--accent) / 0.3), transparent),
-      radial-gradient(3px 3px at calc(50% + 250px) calc(50% + 100px), hsl(var(--secondary) / 0.25), transparent),
+      radial-gradient(2px 2px at calc(50% + 20px) calc(50% - 200px), hsl(var(--primary) / 0.4), transparent),
+      radial-gradient(2px 2px at calc(50% - 300px) calc(50% + 150px), hsl(var(--accent) / 0.35), transparent),
+      radial-gradient(3px 3px at calc(50% + 250px) calc(50% + 100px), hsl(var(--secondary) / 0.3), transparent),
       radial-gradient(1px 1px at calc(50% - 150px) calc(50% - 250px), rgba(255, 255, 255, 0.4), transparent),
-      radial-gradient(1.5px 1.5px at calc(50% + 100px) calc(50% + 50px), rgba(255, 255, 255, 0.3), transparent);
+      radial-gradient(1.5px 1.5px at calc(50% + 100px) calc(50% + 50px), hsl(285 100% 80% / 0.35), transparent),
+      radial-gradient(2px 2px at calc(50% - 50px) calc(50% + 200px), hsl(260 100% 75% / 0.3), transparent);
     background-size: 100% 100%;
     pointer-events: none;
     z-index: -1;
+    filter: blur(0.5px);
+    animation: pulse 15s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
   }
 
   section {

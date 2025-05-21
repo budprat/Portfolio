@@ -228,19 +228,26 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Background decorative elements */}
+      {/* Background decorative elements - purple aesthetic theme */}
       <motion.div 
-        className="hidden lg:block absolute top-20 right-10 w-64 h-64 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl -z-10"
+        className="hidden lg:block absolute top-20 right-10 w-64 h-64 bg-gradient-to-r from-violet-500/20 to-fuchsia-500/15 rounded-full blur-3xl -z-10"
         style={{ 
           x: mousePosition.x * -40,
           y: mousePosition.y * -40
         }}
       ></motion.div>
       <motion.div 
-        className="hidden lg:block absolute bottom-20 left-10 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 rounded-full blur-3xl -z-10"
+        className="hidden lg:block absolute bottom-20 left-10 w-64 h-64 bg-gradient-to-r from-purple-500/20 to-indigo-500/15 rounded-full blur-3xl -z-10"
         style={{ 
           x: mousePosition.x * 40,
           y: mousePosition.y * 40
+        }}
+      ></motion.div>
+      <motion.div 
+        className="hidden lg:block absolute top-40 left-1/4 w-48 h-48 bg-gradient-to-r from-fuchsia-400/10 to-pink-500/10 rounded-full blur-3xl -z-10"
+        style={{ 
+          x: mousePosition.x * 20,
+          y: mousePosition.y * -20
         }}
       ></motion.div>
     </section>
