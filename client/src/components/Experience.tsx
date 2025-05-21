@@ -65,7 +65,7 @@ export default function Experience() {
                       <h3 className="text-xl font-bold text-primary dark:text-primary-foreground">
                         {experience.title}
                       </h3>
-                      <Badge variant="outline" className="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-sm">
+                      <Badge variant="outline" className="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-800 dark:text-gray-100 font-medium">
                         {experience.period}
                       </Badge>
                     </div>
