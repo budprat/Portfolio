@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* Modern tech-inspired gradient theme */
+  /* Modern tech-inspired gradient theme - directly applied for all modes */
   --background: 222 40% 11%; /* Deep navy (#0A192F) */
   --foreground: 240 100% 99%; /* Off-white text (#F8F8FF) */
   --muted: 222 30% 20%; /* Darker navy for muted areas */
