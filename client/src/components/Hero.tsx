@@ -53,12 +53,11 @@ export default function Hero() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.0 }}
               >
-                <div className="absolute -inset-1.5 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-40"></div>
-                <div className="relative bg-card rounded-full p-2">
+                <div className="profile-photo">
                   <img 
                     src={profileImage} 
                     alt="Prateek Budhwar profile picture" 
-                    className="rounded-full w-full h-auto aspect-square object-cover border-2 border-primary/30" 
+                    className="w-full h-auto object-cover" 
                   />
                 </div>
               </motion.div>
@@ -139,7 +138,7 @@ export default function Hero() {
           {/* Right side - AI Projects moved upwards */}
           <div className="lg:w-2/3">
             <motion.div
-              className="bg-card shadow-md border border-border rounded-lg p-6 w-full"
+              className="bg-background/40 backdrop-blur-md border border-white/10 rounded-lg p-6 w-full overflow-hidden relative"
               style={{
                 transformStyle: "preserve-3d",
                 transform: `perspective(1000px) rotateX(${mousePosition.y * 5}deg) rotateY(${mousePosition.x * -10}deg)`,
@@ -149,14 +148,23 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <h3 className="text-xl font-bold text-primary mb-4">AI Projects</h3>
-              <div className="grid grid-cols-1 gap-4">
-                <div className="bg-muted rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 hover:translate-y-[-2px] border border-border/50">
-                  <h4 className="font-semibold text-foreground">AI Knowledge Assistant</h4>
-                  <p className="text-sm text-muted-foreground mb-2">Advanced conversational AI system that provides intelligent answers and information retrieval capabilities.</p>
+              {/* Decorative elements */}
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-secondary/10 rounded-full blur-2xl"></div>
+              
+              <h3 className="text-xl font-bold text-foreground relative inline-block mb-5">
+                AI Projects
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-secondary"></span>
+              </h3>
+              
+              <div className="grid grid-cols-1 gap-5">
+                <div className="bg-background/30 backdrop-blur-sm rounded-lg p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-3px] border border-white/10 relative">
+                  <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-primary opacity-60"></div>
+                  <h4 className="font-semibold text-foreground text-lg mb-1">AI Knowledge Assistant</h4>
+                  <p className="text-muted-foreground mb-3">Advanced conversational AI system that provides intelligent answers and information retrieval capabilities.</p>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {["React", "TypeScript", "GPT-4", "NLP"].map((tech) => (
-                      <span key={tech} className="text-xs px-2 py-1 bg-background text-foreground rounded-full border border-border/50">
+                      <span key={tech} className="text-xs px-3 py-1 bg-background/50 text-foreground/90 rounded-full border border-white/10">
                         {tech}
                       </span>
                     ))}
@@ -165,19 +173,20 @@ export default function Hero() {
                     href="https://6b3b849b-dd07-4106-925a-f6f5e9c55f2e-00-2p5b1ten8f8we.worf.replit.dev/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-primary hover:text-primary/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                    className="inline-flex items-center text-sm text-primary hover:text-primary/80 fancy-link"
                   >
                     View Project <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-muted rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 hover:translate-y-[-2px] border border-border/50">
-                    <h4 className="font-semibold text-foreground">Notion AI Template Forge</h4>
-                    <p className="text-sm text-muted-foreground mb-2">AI-powered app generating custom Notion templates based on user interests and preferred styles.</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div className="bg-background/30 backdrop-blur-sm rounded-lg p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-3px] border border-white/10 relative">
+                    <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-secondary via-accent to-secondary opacity-60"></div>
+                    <h4 className="font-semibold text-foreground text-lg mb-1">Notion AI Template Forge</h4>
+                    <p className="text-muted-foreground mb-3">AI-powered app generating custom Notion templates based on user interests and preferred styles.</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {["React", "TypeScript", "Tailwind", "AI"].map((tech) => (
-                        <span key={tech} className="text-xs px-2 py-1 bg-background text-foreground rounded-full border border-border/50">
+                        <span key={tech} className="text-xs px-3 py-1 bg-background/50 text-foreground/90 rounded-full border border-white/10">
                           {tech}
                         </span>
                       ))}
@@ -186,18 +195,19 @@ export default function Hero() {
                       href="https://github.com/budprat/notion-ai-template-forge"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-primary hover:text-primary/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                      className="inline-flex items-center text-sm text-primary hover:text-primary/80 fancy-link"
                     >
                       View Project <ExternalLink className="ml-1 h-3 w-3" />
                     </a>
                   </div>
 
-                  <div className="bg-muted rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 hover:translate-y-[-2px] border border-border/50">
-                    <h4 className="font-semibold text-foreground">Delhi Date Eats Guide</h4>
-                    <p className="text-sm text-muted-foreground mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
+                  <div className="bg-background/30 backdrop-blur-sm rounded-lg p-5 shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-3px] border border-white/10 relative">
+                    <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-accent via-primary to-accent opacity-60"></div>
+                    <h4 className="font-semibold text-foreground text-lg mb-1">Delhi Date Eats Guide</h4>
+                    <p className="text-muted-foreground mb-3">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {["React", "JavaScript", "CSS"].map((tech) => (
-                        <span key={tech} className="text-xs px-2 py-1 bg-background text-foreground rounded-full border border-border/50">
+                        <span key={tech} className="text-xs px-3 py-1 bg-background/50 text-foreground/90 rounded-full border border-white/10">
                           {tech}
                         </span>
                       ))}
@@ -206,7 +216,7 @@ export default function Hero() {
                       href="https://github.com/budprat/delhi-date-eats-guide"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-primary hover:text-primary/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                      className="inline-flex items-center text-sm text-primary hover:text-primary/80 fancy-link"
                     >
                       View Project <ExternalLink className="ml-1 h-3 w-3" />
                     </a>
