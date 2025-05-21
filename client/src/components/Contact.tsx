@@ -31,7 +31,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-8 md:py-12">
+    <section id="contact" className="bg-background py-8 md:py-12">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-8 reveal"
@@ -41,7 +41,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Let's discuss how we can work together on your next project.
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ export default function Contact() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="bg-white shadow-sm">
+            <Card className="bg-card shadow-md border border-border">
               <CardContent className="p-6 pt-6">
                 <div className="flex flex-col items-center">
                   <img 
@@ -77,12 +77,12 @@ export default function Contact() {
                           {item.icon}
                         </div>
                         <div className="ml-4">
-                          <h4 className="text-lg font-semibold">{item.title}</h4>
+                          <h4 className="text-lg font-semibold text-foreground">{item.title}</h4>
                           <a 
                             href={item.link} 
                             target={item.title === "LinkedIn" || item.title === "GitHub" ? "_blank" : undefined}
                             rel={item.title === "LinkedIn" || item.title === "GitHub" ? "noopener noreferrer" : undefined}
-                            className="text-gray-600 hover:text-primary"
+                            className="text-muted-foreground hover:text-primary transition-colors duration-200"
                           >
                             {item.value}
                           </a>
