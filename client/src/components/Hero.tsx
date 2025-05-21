@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Github, Linkedin, ExternalLink } from "lucide-react";
 import profileImage from "@assets/IMG_0178.jpeg";
+import ParticleBackground from "./ParticleBackground";
 
 export default function Hero() {
   // Smooth scroll to section
@@ -33,6 +34,9 @@ export default function Hero() {
 
   return (
     <section id="home" className="min-h-screen flex flex-col pt-16 overflow-hidden relative">
+      {/* Particle background */}
+      <ParticleBackground />
+      
       {/* Top profile image - centered and prominent */}
       <div className="container mx-auto px-4 mb-8">
         <motion.div
