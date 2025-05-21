@@ -89,7 +89,7 @@ export default function Publications() {
                             href={publication.videoUrl} 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="inline-flex items-center text-red-500 hover:text-red-600 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-red-500 after:transition-all after:duration-300 hover:after:w-full"
+                            className="inline-flex items-center text-accent hover:text-accent/80 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
                           >
                             Watch Video <Video className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                           </a>
