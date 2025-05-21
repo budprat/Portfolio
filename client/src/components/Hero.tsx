@@ -52,11 +52,11 @@ export default function Hero() {
         >
           <div className="relative max-w-[200px] mx-auto mb-6">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-40"></div>
-            <div className="relative bg-white rounded-full p-1.5">
+            <div className="relative bg-card rounded-full p-1.5">
               <img 
                 src={profileImage} 
                 alt="Prateek Budhwar profile picture" 
-                className="rounded-full w-full h-auto aspect-square object-cover border-2 border-muted" 
+                className="rounded-full w-full h-auto aspect-square object-cover border-2 border-primary/30" 
               />
             </div>
           </div>
@@ -87,20 +87,20 @@ export default function Hero() {
             </motion.p>
 
             <motion.div
-              className="bg-slate-50 border border-slate-200 shadow-sm rounded-lg p-4 mb-8 inline-flex items-center gap-3"
+              className="bg-card border border-border shadow-md rounded-lg p-4 mb-8 inline-flex items-center gap-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="flex-shrink-0 p-2 bg-amber-100 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-amber-600">
+              <div className="flex-shrink-0 p-2 bg-primary/20 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-primary">
                   <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
                   <path d="M15.6 10a4 4 0 1 1-8 2.4"></path>
                 </svg>
               </div>
               <div>
-                <h4 className="font-semibold text-amber-600">Arctic Code Vault Contributor</h4>
-                <p className="text-sm text-gray-600">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
+                <h4 className="font-semibold text-primary">Arctic Code Vault Contributor</h4>
+                <p className="text-sm text-muted-foreground">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
               </div>
             </motion.div>
           
@@ -160,7 +160,7 @@ export default function Hero() {
 
             {/* AI Projects Card */}
             <motion.div
-              className="bg-white shadow-sm border border-slate-200 rounded-lg p-5 mx-auto lg:mx-0 w-full"
+              className="bg-card shadow-md border border-border rounded-lg p-5 mx-auto lg:mx-0 w-full"
               style={{
                 transform: `perspective(1000px) rotateX(${mousePosition.y * 5}deg) rotateY(${mousePosition.x * -10}deg)`,
                 transition: 'transform 0.2s ease-out'
@@ -171,12 +171,12 @@ export default function Hero() {
             >
               <h3 className="text-xl font-bold text-primary mb-4">AI Projects</h3>
               <div className="grid grid-cols-1 gap-4">
-                <div className="bg-slate-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 hover:translate-y-[-2px]">
-                  <h4 className="font-semibold text-gray-900">AI Knowledge Assistant</h4>
-                  <p className="text-sm text-gray-600 mb-2">Advanced conversational AI system that provides intelligent answers and information retrieval capabilities.</p>
+                <div className="bg-muted rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 hover:translate-y-[-2px] border border-border/50">
+                  <h4 className="font-semibold text-foreground">AI Knowledge Assistant</h4>
+                  <p className="text-sm text-muted-foreground mb-2">Advanced conversational AI system that provides intelligent answers and information retrieval capabilities.</p>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {["React", "TypeScript", "GPT-4", "NLP"].map((tech) => (
-                      <span key={tech} className="text-xs px-2 py-1 bg-slate-100 text-gray-700 rounded-full">
+                      <span key={tech} className="text-xs px-2 py-1 bg-background text-foreground rounded-full border border-border/50">
                         {tech}
                       </span>
                     ))}
@@ -192,12 +192,12 @@ export default function Hero() {
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="bg-slate-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 hover:translate-y-[-2px]">
-                    <h4 className="font-semibold text-gray-900">Notion AI Template Forge</h4>
-                    <p className="text-sm text-gray-600 mb-2">AI-powered app generating custom Notion templates based on user interests and preferred styles.</p>
+                  <div className="bg-muted rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 hover:translate-y-[-2px] border border-border/50">
+                    <h4 className="font-semibold text-foreground">Notion AI Template Forge</h4>
+                    <p className="text-sm text-muted-foreground mb-2">AI-powered app generating custom Notion templates based on user interests and preferred styles.</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {["React", "TypeScript", "Tailwind", "AI"].map((tech) => (
-                        <span key={tech} className="text-xs px-2 py-1 bg-slate-100 text-gray-700 rounded-full">
+                        <span key={tech} className="text-xs px-2 py-1 bg-background text-foreground rounded-full border border-border/50">
                           {tech}
                         </span>
                       ))}
@@ -212,12 +212,12 @@ export default function Hero() {
                     </a>
                   </div>
 
-                  <div className="bg-slate-50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 hover:translate-y-[-2px]">
-                    <h4 className="font-semibold text-gray-900">Delhi Date Eats Guide</h4>
-                    <p className="text-sm text-gray-600 mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
+                  <div className="bg-muted rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 hover:translate-y-[-2px] border border-border/50">
+                    <h4 className="font-semibold text-foreground">Delhi Date Eats Guide</h4>
+                    <p className="text-sm text-muted-foreground mb-2">A curated guide for romantic dining spots in Delhi with recommendations for date nights.</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {["React", "JavaScript", "CSS"].map((tech) => (
-                        <span key={tech} className="text-xs px-2 py-1 bg-slate-100 text-gray-700 rounded-full">
+                        <span key={tech} className="text-xs px-2 py-1 bg-background text-foreground rounded-full border border-border/50">
                           {tech}
                         </span>
                       ))}

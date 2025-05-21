@@ -32,7 +32,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="bg-slate-50 py-8 md:py-12">
+    <section id="projects" className="bg-background py-8 md:py-12">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-8 reveal"
@@ -42,7 +42,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Featured Projects</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Delivering innovative solutions that make a difference.
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ export default function Projects() {
                 transition: { duration: 0.2 }
               }}
             >
-              <Card className="overflow-hidden h-full bg-white shadow-sm hover:shadow-lg transition-all duration-300 group">
+              <Card className="overflow-hidden h-full bg-card shadow-md hover:shadow-lg transition-all duration-300 group border border-border">
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.imageUrl} 
@@ -69,7 +69,7 @@ export default function Projects() {
                     className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105" 
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-primary text-white">
+                    <Badge className="bg-primary text-primary-foreground">
                       {project.period}
                     </Badge>
                   </div>
@@ -77,7 +77,7 @@ export default function Projects() {
 
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-muted-foreground mb-4">
                     {project.description}
                   </p>
 
@@ -88,8 +88,8 @@ export default function Projects() {
                     <ul className="space-y-2 mb-4">
                       {project.achievements.map((achievement, i) => (
                         <li key={i} className="flex">
-                          <Check className="h-5 w-5 text-green-600 mt-1 mr-2 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
-                          <span>{achievement}</span>
+                          <Check className="h-5 w-5 text-secondary mt-1 mr-2 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                          <span className="text-foreground">{achievement}</span>
                         </li>
                       ))}
                     </ul>
@@ -100,7 +100,7 @@ export default function Projects() {
                       <Badge 
                         key={i} 
                         variant="outline" 
-                        className="bg-gray-100 text-gray-700 hover:bg-primary/10 hover:text-primary transition-colors duration-300 cursor-pointer"
+                        className="bg-muted text-foreground hover:bg-primary/20 hover:text-primary border border-border/50 transition-colors duration-300 cursor-pointer"
                       >
                         {tech}
                       </Badge>
