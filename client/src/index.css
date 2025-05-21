@@ -3,26 +3,26 @@
 @tailwind utilities;
 
 :root {
-  /* Dark mode color palette */
-  --background: 220 20% 10%; /* Dark background (#131820) */
-  --foreground: 220 15% 90%; /* Light text for readability (#E2E6F0) */
-  --muted: 220 15% 20%; /* Muted dark gray (#232836) */
-  --muted-foreground: 220 15% 70%;
-  --popover: 220 20% 10%; 
-  --popover-foreground: 220 15% 90%;
-  --card: 220 15% 12%; /* Slightly lighter than background (#171B26) */
-  --card-foreground: 220 15% 90%;
-  --border: 220 15% 25%; /* Border color (#2D3647) */
+  /* Enhanced dark mode color palette */
+  --background: 225 25% 8%; /* Deeper dark background (#111520) */
+  --foreground: 210 20% 92%; /* Crisp light text (#E8ECF3) */
+  --muted: 220 18% 16%; /* Muted dark gray (#1E2432) */
+  --muted-foreground: 210 15% 75%; /* Softer gray text (#B0BECF) */
+  --popover: 225 25% 8%; 
+  --popover-foreground: 210 20% 92%;
+  --card: 222 22% 12%; /* Slightly lighter than background (#171C2A) */
+  --card-foreground: 210 20% 92%;
+  --border: 220 20% 20%; /* Subtle border color (#262E3F) */
   --input: 220 15% 15%;
-  --primary: 10 55% 55%; /* Terracotta, slightly brighter (#D37B60) */
-  --primary-foreground: 220 15% 95%;
-  --secondary: 140 15% 55%; /* Sage green, suitable for dark theme (#6BA77A) */
-  --secondary-foreground: 220 15% 95%;
-  --accent: 200 20% 55%; /* Dusty blue, suitable for dark theme (#70A0B3) */
-  --accent-foreground: 220 15% 95%;
+  --primary: 15 65% 58%; /* Vibrant terracotta (#E57559) */
+  --primary-foreground: 210 20% 98%;
+  --secondary: 145 22% 55%; /* Rich sage green (#6BB67E) */
+  --secondary-foreground: 210 20% 98%;
+  --accent: 195 35% 58%; /* Vivid dusty blue (#66ADC6) */
+  --accent-foreground: 210 20% 98%;
   --destructive: 0 70% 50%;
-  --destructive-foreground: 220 15% 95%;
-  --ring: 10 55% 55%;
+  --destructive-foreground: 210 20% 98%;
+  --ring: 15 65% 58%;
   --radius: 0.5rem;
 }
 
@@ -103,6 +103,8 @@
 }
 
 @layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
   :root {
     scroll-behavior: smooth;
   }
@@ -131,11 +133,14 @@
   }
 
   body {
-    @apply font-serif antialiased text-foreground tracking-normal;
+    @apply antialiased text-foreground tracking-normal;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.01em;
     background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--background) / 0.98)),
                 url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C17A5E' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-                radial-gradient(circle at top left, hsl(var(--primary) / 0.08), transparent 40%),
-                radial-gradient(circle at bottom right, hsl(var(--secondary) / 0.08), transparent 40%);
+                radial-gradient(circle at top left, hsl(var(--primary) / 0.1), transparent 40%),
+                radial-gradient(circle at bottom right, hsl(var(--secondary) / 0.1), transparent 40%),
+                radial-gradient(circle at center, hsl(var(--accent) / 0.03), transparent 60%);
     background-attachment: fixed;
   }
 
@@ -152,11 +157,44 @@
   }
 
   h1, h2, h3, h4 {
-    @apply font-serif font-medium tracking-tight;
+    font-family: 'Cormorant Garamond', serif;
+    @apply font-medium tracking-tight;
+    letter-spacing: -0.02em;
+  }
+  
+  h1 {
+    @apply text-foreground/95;
+    font-weight: 600;
+  }
+  
+  h2 {
+    @apply text-foreground/95 relative;
+    font-weight: 600;
+  }
+  
+  h2:after {
+    content: '';
+    @apply absolute -bottom-2 left-1/2 -translate-x-1/2 h-0.5 w-16 bg-primary/60 rounded-full;
+  }
+  
+  h3 {
+    @apply text-foreground/90;
+    font-weight: 500;
+  }
+  
+  h4 {
+    @apply text-foreground/90;
+    font-weight: 500;
   }
   
   p {
-    @apply font-sans leading-relaxed;
+    font-family: 'Inter', sans-serif;
+    @apply font-light leading-relaxed text-foreground/80;
+    letter-spacing: 0.005em;
+  }
+
+  a {
+    @apply transition-all duration-200;
   }
 
   .container {
@@ -166,15 +204,45 @@
 
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent font-bold;
-  text-shadow: 0 0 15px rgba(193, 122, 94, 0.15);
+  text-shadow: 0 0 15px rgba(229, 117, 89, 0.25);
 }
 
 .card-hover {
-  @apply transition-all duration-300;
+  @apply transition-all duration-300 relative;
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.1), 
+              0 2px 8px -2px rgba(0, 0, 0, 0.2);
+}
+
+.card-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  @apply bg-gradient-to-r from-primary via-secondary to-accent opacity-0 transition-opacity duration-300;
+}
+
+.card-hover:hover::before {
+  @apply opacity-100;
 }
 
 .project-card {
-  @apply transition-all duration-500 hover:shadow-xl hover:-translate-y-2;
+  @apply transition-all duration-500 hover:shadow-xl hover:-translate-y-2 relative overflow-hidden;
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.15), 
+              0 2px 8px -2px rgba(0, 0, 0, 0.1);
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  @apply bg-gradient-to-t from-background to-transparent opacity-60 transition-opacity duration-300;
+  pointer-events: none;
+}
+
+.project-card:hover::after {
+  @apply opacity-40;
 }
 
 .project-card:hover img {
@@ -182,5 +250,65 @@
 }
 
 .skill-card {
-  @apply transition-all duration-300 hover:shadow-lg hover:bg-accent/10;
+  @apply transition-all duration-300 hover:shadow-lg hover:bg-accent/5 border border-muted;
+}
+
+/* Fancy links */
+.fancy-link {
+  @apply relative inline-block overflow-hidden text-foreground no-underline;
+}
+
+.fancy-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 origin-bottom-right transition-transform duration-300 ease-out;
+}
+
+.fancy-link:hover::after {
+  @apply scale-x-100 origin-bottom-left;
+}
+
+/* Soft glow effect for important elements */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(229, 117, 89, 0.15);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(107, 182, 126, 0.15);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(102, 173, 198, 0.15);
+}
+
+/* Refined date styles */
+.date-badge {
+  @apply inline-block px-3 py-1 rounded-full bg-muted/60 text-foreground/80 text-sm;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Elegant quote style */
+blockquote {
+  @apply pl-6 border-l-2 border-primary/40 italic text-foreground/75;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Refined list styles */
+ul:not(.reset-list) li::before {
+  content: '•';
+  @apply mr-2 text-primary;
+}
+
+ol:not(.reset-list) {
+  counter-reset: item;
+}
+
+ol:not(.reset-list) li {
+  counter-increment: item;
+}
+
+ol:not(.reset-list) li::before {
+  content: counter(item) '.';
+  @apply mr-2 text-primary font-medium;
 }
