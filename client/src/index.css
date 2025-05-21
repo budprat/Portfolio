@@ -14,15 +14,15 @@
   --card-foreground: 220 10% 82%;
   --border: 220 20% 20%; /* Subtle border color (#262E3F) */
   --input: 220 15% 15%;
-  --primary: 250 35% 60%; /* Darker lavender (#8678C7) */
+  --primary: 250 30% 70%; /* Soft lavender (#A799E0) */
   --primary-foreground: 0 0% 100%;
-  --secondary: 180 28% 58%; /* Slightly darker teal (#7AB9B9) */
+  --secondary: 180 25% 65%; /* Muted teal (#8FCECE) */
   --secondary-foreground: 225 25% 10%;
-  --accent: 325 25% 58%; /* Slightly darker dusty rose (#B2829A) */
+  --accent: 325 20% 65%; /* Dusty rose (#C399AF) */
   --accent-foreground: 225 25% 10%;
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
-  --ring: 250 35% 60%;
+  --ring: 250 30% 70%;
   --radius: 0.5rem;
 }
 
