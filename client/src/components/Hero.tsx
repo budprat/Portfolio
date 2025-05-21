@@ -32,8 +32,34 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16 overflow-hidden relative">
-      <div className="container mx-auto px-4 py-8 md:py-12">
+    <section id="home" className="min-h-screen flex flex-col pt-16 overflow-hidden relative">
+      {/* Top profile image - centered and prominent */}
+      <div className="container mx-auto px-4 mb-8">
+        <motion.div
+          className="mx-auto text-center"
+          style={{
+            transformStyle: "preserve-3d",
+            transform: `perspective(1000px) rotateX(${mousePosition.y * 5}deg) rotateY(${mousePosition.x * -10}deg)`,
+            transition: 'transform 0.2s ease-out'
+          }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.0 }}
+        >
+          <div className="relative max-w-[200px] mx-auto mb-6">
+            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-40"></div>
+            <div className="relative bg-white rounded-full p-1.5">
+              <img 
+                src={profileImage} 
+                alt="Prateek Budhwar profile picture" 
+                className="rounded-full w-full h-auto aspect-square object-cover border-2 border-muted" 
+              />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="container mx-auto px-4 py-4 md:py-8 flex-grow">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Animated Typography */}
           <motion.div className="lg:order-1 z-10">
@@ -125,47 +151,8 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right side - Visual Elements with 3D tilt effect */}
+          {/* Right side - AI Projects */}
           <div className="lg:order-2 flex flex-col gap-8 relative">
-            {/* Profile image with 3D tilt effect */}
-            <motion.div 
-              className="relative mx-auto lg:mx-0"
-              style={{
-                transformStyle: "preserve-3d",
-                transform: `perspective(1000px) rotateX(${mousePosition.y * 10}deg) rotateY(${mousePosition.x * -20}deg)`,
-                transition: 'transform 0.2s ease-out'
-              }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.0 }}
-            >
-              <div className="relative max-w-[300px] mx-auto lg:ml-auto">
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur opacity-50"></div>
-                <div className="relative bg-white rounded-full p-1.5">
-                  <img 
-                    src={profileImage} 
-                    alt="Prateek Budhwar profile picture" 
-                    className="rounded-full w-full h-auto aspect-square object-cover border-2 border-slate-100" 
-                  />
-                </div>
-
-                {/* Decorative elements */}
-                <motion.div 
-                  className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full blur-xl opacity-40"
-                  style={{ 
-                    x: mousePosition.x * -30,
-                    y: mousePosition.y * -30
-                  }}
-                ></motion.div>
-                <motion.div 
-                  className="absolute -bottom-2 -left-2 w-6 h-6 bg-purple-500 rounded-full blur-xl opacity-40"
-                  style={{ 
-                    x: mousePosition.x * 30,
-                    y: mousePosition.y * 30
-                  }}
-                ></motion.div>
-              </div>
-            </motion.div>
 
             {/* AI Projects Card */}
             <motion.div
