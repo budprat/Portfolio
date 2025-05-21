@@ -5,14 +5,14 @@ type ThemeProviderProps = {
 };
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  // Force light mode
+  // Force dark mode
   useEffect(() => {
     if (typeof window === "undefined") return;
     
-    // Apply light mode to the document
+    // Apply dark mode to the document
     const root = window.document.documentElement;
-    root.classList.remove("dark");
-    root.classList.add("light");
+    root.classList.remove("light");
+    root.classList.add("dark");
   }, []);
 
   return <>{children}</>;
