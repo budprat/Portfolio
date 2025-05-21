@@ -58,9 +58,9 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <Projects />
         <About />
         <Experience />
-        <Projects />
         <Education />
         <Publications />
         <Testimonial />
