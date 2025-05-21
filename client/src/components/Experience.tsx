@@ -32,7 +32,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-8 md:py-12">
+    <section id="experience" className="py-8 md:py-12 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-8 reveal"
@@ -41,8 +41,8 @@ export default function Experience() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Professional Experience</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-foreground">Professional Experience</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             My journey building innovative tech solutions.
           </p>
         </motion.div>
@@ -59,39 +59,40 @@ export default function Experience() {
             >
               <div className="timeline-dot bg-primary"></div>
               <div className="timeline-content ml-10">
-                <Card>
-                  <CardContent className="p-6">
+                <div className="bg-background/40 backdrop-blur-md border border-white/10 rounded-lg shadow-lg overflow-hidden relative">
+                  <div className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-primary via-secondary to-primary opacity-70"></div>
+                  <div className="p-6">
                     <div className="flex justify-between items-start flex-wrap gap-2 mb-4">
-                      <h3 className="text-xl font-bold text-primary dark:text-primary-foreground">
+                      <h3 className="text-xl font-bold text-primary relative inline-block">
                         {experience.title}
                       </h3>
-                      <Badge variant="outline" className="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full text-sm text-gray-800 dark:text-gray-100 font-medium">
+                      <div className="date-badge">
                         {experience.period}
-                      </Badge>
+                      </div>
                     </div>
                     
-                    <h4 className="text-lg font-semibold mb-2">
+                    <h4 className="text-lg font-semibold mb-2 text-foreground">
                       {experience.company}, {experience.location}
                     </h4>
                     
                     <ul className="space-y-3 mt-4">
                       {experience.achievements.map((achievement, i) => (
                         <li key={i} className="flex">
-                          <Rocket className="h-5 w-5 text-green-600 dark:text-green-400 mt-1 mr-3 flex-shrink-0" />
-                          <span>{achievement}</span>
+                          <Rocket className="h-5 w-5 text-primary mt-1 mr-3 flex-shrink-0" />
+                          <span className="text-foreground/90">{achievement}</span>
                         </li>
                       ))}
                     </ul>
                     
                     <div className="mt-6 flex flex-wrap gap-2">
                       {experience.skills.map((skill, i) => (
-                        <Badge key={i} variant="secondary" className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100">
+                        <Badge key={i} className="bg-background/50 text-foreground/90 border border-white/10 px-3 py-1">
                           {skill}
                         </Badge>
                       ))}
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -103,26 +104,32 @@ export default function Experience() {
           content: '';
           position: absolute;
           width: 2px;
-          background-color: #e5e7eb;
+          background: linear-gradient(to bottom, 
+            rgba(78, 205, 196, 0.8),
+            rgba(68, 49, 141, 0.8),
+            rgba(78, 205, 196, 0.8));
           top: 0;
           bottom: 0;
           left: 20px;
           margin-left: -1px;
+          box-shadow: 0 0 8px rgba(78, 205, 196, 0.4);
         }
         
         .timeline-item {
           position: relative;
-          margin-bottom: 20px;
+          margin-bottom: 30px;
         }
         
         .timeline-dot {
           position: absolute;
-          width: 16px;
-          height: 16px;
+          width: 18px;
+          height: 18px;
           left: 20px;
           border-radius: 50%;
           z-index: 1;
           transform: translateX(-50%);
+          box-shadow: 0 0 10px rgba(78, 205, 196, 0.6);
+          border: 2px solid rgba(255, 255, 255, 0.3);
         }
       ` }} />
     </section>

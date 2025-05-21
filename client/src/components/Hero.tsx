@@ -33,7 +33,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex flex-col pt-16 overflow-hidden relative">
+    <section id="home" className="min-h-screen flex flex-col pt-16 overflow-hidden relative bg-background text-foreground">
       {/* Particle background */}
       <ParticleBackground />
       
