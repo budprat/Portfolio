@@ -24,7 +24,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="bg-white py-8 md:py-12">
+    <section id="about" className="bg-background py-8 md:py-12">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-8 reveal"
@@ -46,21 +46,21 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.p 
-              className="text-lg mb-6 text-gray-700 text-center"
+              className="text-lg mb-6 text-foreground text-center"
               variants={itemVariants}
             >
               I'm a results-oriented Data Engineer with 5+ years of experience in building scalable Earth Observation data processing pipelines, systems, and cloud-native applications.
             </motion.p>
             
             <motion.p 
-              className="text-lg mb-6 text-gray-700 text-center"
+              className="text-lg mb-6 text-foreground text-center"
               variants={itemVariants}
             >
               With a proven track record of architecting distributed computing frameworks and implementing scalable solutions for large-volume geospatial data processing, I've consistently optimized workflows for large-scale satellite datasets.
             </motion.p>
             
             <motion.p 
-              className="text-lg mb-8 text-gray-700 text-center"
+              className="text-lg mb-8 text-foreground text-center"
               variants={itemVariants}
             >
               I'm now transitioning my extensive data engineering expertise toward AI-focused roles, eager to contribute to innovative machine learning applications.
@@ -74,20 +74,20 @@ export default function About() {
                 <h4 className="font-bold mb-3 text-primary">Expertise</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-600 mr-2" />
-                    <span>Data Pipeline Architecture</span>
+                    <Check className="h-5 w-5 text-secondary mr-2" />
+                    <span className="text-muted-foreground">Data Pipeline Architecture</span>
                   </li>
                   <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-600 mr-2" />
-                    <span>Cloud Infrastructure</span>
+                    <Check className="h-5 w-5 text-secondary mr-2" />
+                    <span className="text-muted-foreground">Cloud Infrastructure</span>
                   </li>
                   <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-600 mr-2" />
-                    <span>Geospatial Analytics</span>
+                    <Check className="h-5 w-5 text-secondary mr-2" />
+                    <span className="text-muted-foreground">Geospatial Analytics</span>
                   </li>
                   <li className="flex items-center">
-                    <Check className="h-5 w-5 text-green-600 mr-2" />
-                    <span>API Development</span>
+                    <Check className="h-5 w-5 text-secondary mr-2" />
+                    <span className="text-muted-foreground">API Development</span>
                   </li>
                 </ul>
               </div>
@@ -96,20 +96,20 @@ export default function About() {
                 <h4 className="font-bold mb-3 text-primary">Transitioning To</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center">
-                    <ArrowRight className="h-5 w-5 text-green-600 mr-2" />
-                    <span>AI Engineering</span>
+                    <ArrowRight className="h-5 w-5 text-accent mr-2" />
+                    <span className="text-muted-foreground">AI Engineering</span>
                   </li>
                   <li className="flex items-center">
-                    <ArrowRight className="h-5 w-5 text-green-600 mr-2" />
-                    <span>Model Finetuning</span>
+                    <ArrowRight className="h-5 w-5 text-accent mr-2" />
+                    <span className="text-muted-foreground">Model Finetuning</span>
                   </li>
                   <li className="flex items-center">
-                    <ArrowRight className="h-5 w-5 text-green-600 mr-2" />
-                    <span>LLM Development</span>
+                    <ArrowRight className="h-5 w-5 text-accent mr-2" />
+                    <span className="text-muted-foreground">LLM Development</span>
                   </li>
                   <li className="flex items-center">
-                    <ArrowRight className="h-5 w-5 text-green-600 mr-2" />
-                    <span>AI Systems</span>
+                    <ArrowRight className="h-5 w-5 text-accent mr-2" />
+                    <span className="text-muted-foreground">AI Systems</span>
                   </li>
                 </ul>
               </div>

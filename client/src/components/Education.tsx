@@ -34,7 +34,7 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="bg-white dark:bg-gray-800 py-16 md:py-24">
+    <section id="education" className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16 reveal"
@@ -44,7 +44,7 @@ export default function Education() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Education & Certifications</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Building expertise through continuous learning.
           </p>
         </motion.div>

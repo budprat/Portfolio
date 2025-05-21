@@ -50,9 +50,9 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.0 }}
         >
-          <div className="relative max-w-[200px] mx-auto mb-6">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-40"></div>
-            <div className="relative bg-card rounded-full p-1.5">
+          <div className="relative max-w-[280px] mx-auto mb-8">
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-40"></div>
+            <div className="relative bg-card rounded-full p-2">
               <img 
                 src={profileImage} 
                 alt="Prateek Budhwar profile picture" 
