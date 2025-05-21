@@ -31,7 +31,7 @@ export default function Publications() {
   ];
 
   return (
-    <section id="publications" className="py-8 md:py-12">
+    <section id="publications" className="bg-background py-8 md:py-12">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-8 reveal"
@@ -41,7 +41,7 @@ export default function Publications() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Publications</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Academic contributions and research papers.
           </p>
         </motion.div>
@@ -59,7 +59,7 @@ export default function Publications() {
                 transition: { duration: 0.2 }
               }}
             >
-              <Card className="bg-white shadow-sm hover:shadow-md transition-all duration-300 group">
+              <Card className="bg-card border border-border shadow-md hover:shadow-lg transition-all duration-300 group">
                 <CardContent className="p-6 flex">
                   <div className="flex-shrink-0 mr-5 mt-1">
                     <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
@@ -68,16 +68,16 @@ export default function Publications() {
                   </div>
                   
                   <div className="flex-grow">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
                       {publication.title}
                     </h3>
                     
-                    <p className="text-gray-700 mb-3">
+                    <p className="text-muted-foreground mb-3">
                       {publication.authors}
                     </p>
                     
                     <div className="flex items-center justify-between">
-                      <div className="text-gray-600">
+                      <div className="text-muted-foreground">
                         <span className="font-medium">{publication.event}</span>
                         <span className="mx-2">•</span>
                         <span>{publication.year}</span>

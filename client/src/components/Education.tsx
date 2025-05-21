@@ -58,7 +58,7 @@ export default function Education() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-primary dark:text-primary-foreground">
+            <h3 className="text-2xl font-bold mb-6 text-primary">
               Academic Background
             </h3>
             
@@ -71,13 +71,13 @@ export default function Education() {
                   viewport={{ once: true, margin: "-150px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="bg-gray-50 dark:bg-gray-700">
+                  <Card className="bg-card border border-border shadow-md">
                     <CardContent className="p-6">
-                      <h4 className="text-lg font-semibold">{item.degree}</h4>
-                      <p className="text-gray-600 dark:text-gray-300 my-2">
+                      <h4 className="text-lg font-semibold text-foreground">{item.degree}</h4>
+                      <p className="text-muted-foreground my-2">
                         {item.institution}, {item.location}
                       </p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{item.year}</p>
+                      <p className="text-sm text-muted-foreground/70">{item.year}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -93,7 +93,7 @@ export default function Education() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-primary dark:text-primary-foreground">
+            <h3 className="text-2xl font-bold mb-6 text-primary">
               Certifications & Training
             </h3>
             
@@ -106,14 +106,14 @@ export default function Education() {
                   viewport={{ once: true, margin: "-150px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="bg-gray-50 dark:bg-gray-700">
+                  <Card className="bg-card border border-border shadow-md">
                     <CardContent className="p-6">
-                      <h4 className="text-lg font-semibold">{item.name}</h4>
-                      <p className="text-gray-600 dark:text-gray-300 my-2">
+                      <h4 className="text-lg font-semibold text-foreground">{item.name}</h4>
+                      <p className="text-muted-foreground my-2">
                         {item.institution}
                       </p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{item.year}</p>
-                      <p className="mt-3 text-gray-600 dark:text-gray-300">
+                      <p className="text-sm text-muted-foreground/70">{item.year}</p>
+                      <p className="mt-3 text-muted-foreground">
                         {item.description}
                       </p>
                     </CardContent>
@@ -127,10 +127,10 @@ export default function Education() {
                 viewport={{ once: true, margin: "-150px" }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <Card className="bg-gray-50 dark:bg-gray-700 h-full">
+                <Card className="bg-card border border-border shadow-md h-full">
                   <CardContent className="p-6 flex flex-col items-center justify-center h-full">
-                    <Award className="h-16 w-16 text-primary dark:text-primary-foreground mb-4" />
-                    <p className="text-center text-gray-600 dark:text-gray-300">
+                    <Award className="h-16 w-16 text-primary mb-4" />
+                    <p className="text-center text-muted-foreground">
                       Continuously expanding my expertise through specialized courses and hands-on projects in AI engineering, geospatial data science, and cloud architecture.
                     </p>
                   </CardContent>
