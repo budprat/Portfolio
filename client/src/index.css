@@ -3,26 +3,26 @@
 @tailwind utilities;
 
 :root {
-  /* New color palette */
-  --background: 43 53% 95%; /* Warm off-white (#F8F4EA) */
-  --foreground: 210 10% 23%; /* Dark text for readability */
-  --muted: 40 30% 84%; /* Soft sand (#E6DDC6) */
-  --muted-foreground: 210 9% 31%;
-  --popover: 43 53% 95%;
-  --popover-foreground: 210 10% 23%;
-  --card: 43 53% 95%;
-  --card-foreground: 210 10% 23%;
-  --border: 40 30% 84%;
-  --input: 40 30% 84%;
-  --primary: 10 40% 56%; /* Terracotta (#C17A5E) */
-  --primary-foreground: 43 53% 95%;
-  --secondary: 110 10% 50%; /* Sage green (#7D8C75) */
-  --secondary-foreground: 43 53% 95%;
-  --accent: 200 10% 63%; /* Dusty blue (#94A7AE) */
-  --accent-foreground: 210 10% 23%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
-  --ring: 10 40% 56%;
+  /* Dark mode color palette */
+  --background: 220 20% 10%; /* Dark background (#131820) */
+  --foreground: 220 15% 90%; /* Light text for readability (#E2E6F0) */
+  --muted: 220 15% 20%; /* Muted dark gray (#232836) */
+  --muted-foreground: 220 15% 70%;
+  --popover: 220 20% 10%; 
+  --popover-foreground: 220 15% 90%;
+  --card: 220 15% 12%; /* Slightly lighter than background (#171B26) */
+  --card-foreground: 220 15% 90%;
+  --border: 220 15% 25%; /* Border color (#2D3647) */
+  --input: 220 15% 15%;
+  --primary: 10 55% 55%; /* Terracotta, slightly brighter (#D37B60) */
+  --primary-foreground: 220 15% 95%;
+  --secondary: 140 15% 55%; /* Sage green, suitable for dark theme (#6BA77A) */
+  --secondary-foreground: 220 15% 95%;
+  --accent: 200 20% 55%; /* Dusty blue, suitable for dark theme (#70A0B3) */
+  --accent-foreground: 220 15% 95%;
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 220 15% 95%;
+  --ring: 10 55% 55%;
   --radius: 0.5rem;
 }
 
