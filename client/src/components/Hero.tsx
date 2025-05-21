@@ -37,137 +37,117 @@ export default function Hero() {
       {/* Particle background */}
       <ParticleBackground />
       
-      {/* Top profile image - centered and prominent */}
-      <div className="container mx-auto px-4 mb-8">
-        <motion.div
-          className="mx-auto text-center"
-          style={{
-            transformStyle: "preserve-3d",
-            transform: `perspective(1000px) rotateX(${mousePosition.y * 5}deg) rotateY(${mousePosition.x * -10}deg)`,
-            transition: 'transform 0.2s ease-out'
-          }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.0 }}
-        >
-          <div className="relative max-w-[280px] mx-auto mb-8">
-            <div className="absolute -inset-1.5 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-40"></div>
-            <div className="relative bg-card rounded-full p-2">
-              <img 
-                src={profileImage} 
-                alt="Prateek Budhwar profile picture" 
-                className="rounded-full w-full h-auto aspect-square object-cover border-2 border-primary/30" 
-              />
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Left side - Profile Image */}
+          <div className="lg:w-1/3">
+            <div className="mb-6">
+              <motion.div
+                className="relative max-w-[280px] mb-4"
+                style={{
+                  transformStyle: "preserve-3d",
+                  transform: `perspective(1000px) rotateX(${mousePosition.y * 5}deg) rotateY(${mousePosition.x * -10}deg)`,
+                  transition: 'transform 0.2s ease-out'
+                }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.0 }}
+              >
+                <div className="absolute -inset-1.5 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-40"></div>
+                <div className="relative bg-card rounded-full p-2">
+                  <img 
+                    src={profileImage} 
+                    alt="Prateek Budhwar profile picture" 
+                    className="rounded-full w-full h-auto aspect-square object-cover border-2 border-primary/30" 
+                  />
+                </div>
+              </motion.div>
             </div>
-          </div>
-        </motion.div>
-      </div>
-
-      <div className="container mx-auto px-4 py-4 md:py-8 flex-grow">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Animated Typography */}
-          <motion.div className="lg:order-1 z-10">
-            <motion.h1 
-              className="mb-6 leading-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="block text-4xl md:text-5xl lg:text-7xl font-extrabold text-gray-900">Hi, I'm Prateek Budhwar</span>
-              <span className="block text-3xl md:text-4xl lg:text-5xl font-bold mt-2 text-primary">Data Engineer & AI Enthusiast</span>
-            </motion.h1>
-
-            <motion.p 
-              className="text-xl md:text-2xl mb-6 text-gray-700 font-light leading-relaxed"
+            
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Transforming Earth Observation data into actionable insights through scalable pipelines and cloud-native applications.
-            </motion.p>
-
-            <motion.div
-              className="bg-card border border-border shadow-md rounded-lg p-4 mb-8 inline-flex items-center gap-3"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <div className="flex-shrink-0 p-2 bg-primary/20 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-primary">
-                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
-                  <path d="M15.6 10a4 4 0 1 1-8 2.4"></path>
-                </svg>
+              <h1 className="text-3xl md:text-4xl font-bold mb-3 text-foreground">
+                Hi, I'm Prateek Budhwar
+              </h1>
+              <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-primary">
+                Data Engineer & AI Enthusiast
+              </h2>
+              
+              <p className="text-lg mb-6 text-muted-foreground font-light leading-relaxed">
+                Transforming Earth Observation data into actionable insights through scalable pipelines and cloud-native applications.
+              </p>
+              
+              <div className="bg-card border border-border shadow-md rounded-lg p-4 mb-8 flex items-center gap-3">
+                <div className="flex-shrink-0 p-2 bg-primary/20 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-primary">
+                    <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+                    <path d="M15.6 10a4 4 0 1 1-8 2.4"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-primary">Arctic Code Vault Contributor</h4>
+                  <p className="text-sm text-muted-foreground">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-semibold text-primary">Arctic Code Vault Contributor</h4>
-                <p className="text-sm text-muted-foreground">Contributed code to 1 repository in the 2020 GitHub Archive Program.</p>
+              
+              <div className="flex flex-wrap gap-4 mb-6">
+                <Button 
+                  size="lg" 
+                  onClick={() => scrollToSection('contact')}
+                  className="px-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] group"
+                >
+                  <span className="relative z-10">Get in Touch</span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                </Button>
+                
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  onClick={() => scrollToSection('projects')}
+                  className="px-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] hover:border-primary"
+                >
+                  View My Projects
+                </Button>
+              </div>
+              
+              <div className="flex gap-4">
+                <a 
+                  href="https://github.com/budprat" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-muted-foreground hover:text-primary text-xl transition-colors duration-200"
+                  aria-label="GitHub Profile"
+                >
+                  <Github className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/prateek-budhwar-212a92314/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-muted-foreground hover:text-primary text-xl transition-colors duration-200"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
               </div>
             </motion.div>
+          </div>
           
-            <motion.div 
-              className="flex flex-wrap gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <Button 
-                size="lg" 
-                onClick={() => scrollToSection('contact')}
-                className="px-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] group"
-              >
-                <span className="relative z-10">Get in Touch</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                onClick={() => scrollToSection('projects')}
-                className="px-8 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:translate-y-[-2px] hover:border-primary"
-              >
-                View My Projects
-              </Button>
-            </motion.div>
-
-            <motion.div 
-              className="mt-8 flex gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            >
-              <a 
-                href="https://github.com/budprat" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-gray-600 hover:text-primary text-xl transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                aria-label="GitHub Profile"
-              >
-                <Github className="h-6 w-6" />
-              </a>
-              <a 
-                href="https://www.linkedin.com/in/prateek-budhwar-212a92314/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-gray-600 hover:text-primary text-xl transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin className="h-6 w-6" />
-              </a>
-            </motion.div>
-          </motion.div>
-
-          {/* Right side - AI Projects */}
-          <div className="lg:order-2 flex flex-col gap-8 relative">
-
-            {/* AI Projects Card */}
+          {/* Right side - AI Projects moved upwards */}
+          <div className="lg:w-2/3">
             <motion.div
-              className="bg-card shadow-md border border-border rounded-lg p-5 mx-auto lg:mx-0 w-full"
+              className="bg-card shadow-md border border-border rounded-lg p-6 w-full"
               style={{
+                transformStyle: "preserve-3d",
                 transform: `perspective(1000px) rotateX(${mousePosition.y * 5}deg) rotateY(${mousePosition.x * -10}deg)`,
                 transition: 'transform 0.2s ease-out'
               }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
             >
               <h3 className="text-xl font-bold text-primary mb-4">AI Projects</h3>
               <div className="grid grid-cols-1 gap-4">
